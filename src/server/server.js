@@ -1,11 +1,15 @@
 import express from "express";
-
+import ReactDOM from "react-dom/server";
+import { Header } from "../shared/Header";
+import { indexTemlate } from "./indexTemlate";
 //инициализируме экспресс
 const app = express();
 
+app.use("/static", express.static("./dist/client"));
+
 //устаналиваием листененр на сервер get
 app.get("/", (req, res) => {
-  res.send("Help Woorld");
+  res.send(indexTemlate(ReactDOM.renderToString(Header())));
 });
 
 app.listen(3000, () => {

@@ -19,7 +19,7 @@ module.exports = {
   entry: path.resolve(__dirname, "../src/client/index.jsx"),
   //куда складвать
   output: {
-    path: path.resolve(__dirname, "../dist/client.js"),
+    path: path.resolve(__dirname, "../dist/client"),
     filename: "client.js",
   },
   //настройка лоадера

@@ -5,3 +5,4 @@ npm i -D html-webpack-plugin@3 ----- Автоподключение собран
 npm i -D webpack-dev-server@3
    -2- Урок
 npm i express@4
+npm i -D webpack-node-externals@1 -- запрещает сборщику упаковывать библиотеки из папки node_modules
