@@ -1,11 +1,15 @@
 {
   "compilerOptions": {
-    "target": "ES2015",
+    "target": "ES2015", /*es5 - какой JS используется*/
     "module": "commonjs",
-    "allowJs": true,
-    "jsx": "react",
-    "strict": true,
-    "esModuleInterop": true,
+    "lib":["dom", "esnext"], /*подключение модулей ДОМ, и поддержка тайпингов др es5 пр*/
+    "allowJs": true, /* TS обарабатывает JS*/
+    "jsx": "react", /* TS обарабатывает JSX по правилам REACT*/
+    "sourceMap": true,/*генерирует .map файлы*/
+    "strict": true, /*строгая сверка типов и вадача ошибок*/
+    "allowSyntheticDefaultImports":true,/*использовать дефолтные импорты*/
+    "esModuleInterop": true, /* правильаня работа дефолтных экспортов*/
+    "resolveJsonModule": true,/**/
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "types":[]
