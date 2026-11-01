@@ -1,0 +1,9 @@
+@media all and (min-width: 1024px) {
+  .cardLists {
+    padding: 40px;
+  }
+}
+.cardLists {
+  position: relative;
+  padding-bottom: 40px;
+}

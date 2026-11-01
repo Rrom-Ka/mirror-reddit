@@ -14,5 +14,5 @@
     "forceConsistentCasingInFileNames": true,
     "types":[]
   },
-  "exclude": ["node_modules", "bin", "cfg", "webpack.config.js", "webpack.client.config.js", "webpack.server.config.js"]
+  "exclude": ["node_modules", "bin", "cfg", "webpack.config.js", "webpack.client.config.js", "webpack.server.config.js", "customTemplates"]
 }

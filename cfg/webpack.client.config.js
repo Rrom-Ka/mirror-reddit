@@ -1,4 +1,5 @@
 const path = require("path");
+const webpack = require("webpack");
 const { HotModuleReplacementPlugin } = require("webpack"); //подключение @hot-loader/react-dom
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
@@ -6,7 +7,10 @@ const NODE_ENV = process.env.NODE_ENV;
 const IS_DEV = NODE_ENV === "development";
 const IS_PROD = NODE_ENV === "production";
 
-//для поиска ошибок
+//глобальный стили будут заканчиваться
+const CLOBAL_CSS_REGEXP = /\.global\.css$/;
+
+//для поиска ошибок в продакшенеа false
 function setupDevtool() {
   if (IS_DEV) return "eval";
   if (IS_PROD) return false;
@@ -38,19 +42,45 @@ module.exports = {
       {
         test: /\.[tj]sx?$/, // расширения обрабатваемых файлов
         use: ["ts-loader"], //обработчик
-        exclude: /node_modules/,
+        exclude: [
+          /node_modules/,
+          path.resolve(__dirname, "../customTemplates"),
+        ],
+      },
+      {
+        test: /\.css$/,
+        use: [
+          "style-loader",
+          {
+            loader: "css-loader",
+            options: {
+              modules: {
+                mode: "local",
+                localIdentName: "[name]__[local]--[hash:base64:5]",
+              },
+            },
+          },
+        ],
+        exclude: CLOBAL_CSS_REGEXP, //
+      },
+      {
+        test: CLOBAL_CSS_REGEXP,
+        use: ["style-loader", "css-loader"],
       },
     ],
   },
 
   //для поиска ошибок
   devtool: setupDevtool(),
-  plugins: IS_DEV
-    ? [
-        new CleanWebpackPlugin(), //подключение @hot-loader/react-dom
-        new HotModuleReplacementPlugin(), //подключение @hot-loader/react-dom
-      ]
-    : [],
+  plugins: [
+    // ДЛЯ WEBPACK 4: Передаем массив путей напрямую
+    new webpack.WatchIgnorePlugin([
+      path.resolve(__dirname, "../customTemplates"),
+    ]),
+    ...(IS_DEV
+      ? [new CleanWebpackPlugin(), new HotModuleReplacementPlugin()]
+      : []),
+  ],
 };
 
 //подключение @hot-loader/react-dom

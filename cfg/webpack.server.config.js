@@ -1,8 +1,10 @@
 const path = require("path");
+const webpack = require("webpack");
 const nodeExternals = require("webpack-node-externals");
 
 const NODE_ENV = process.env.NODE_ENV;
-
+//глобальный стили будут заканчиваться
+const CLOBAL_CSS_REGEXP = /\.global\.css$/;
 module.exports = {
   //только для node.js
   target: "node",
@@ -14,15 +16,39 @@ module.exports = {
     filename: "server.js",
   },
   resolve: {
-    extensions: [".js", ".jsx", ".ts", ".tsx", ".json"],
+    extensions: [".js", ".jsx", ".ts", ".tsx", ".json", ".css"],
   },
   externals: [nodeExternals()], //подключение extenals
+  //настройка лоадера
   module: {
     rules: [
       {
         test: /\.[tj]sx?$/, // расширения обрабатваемых файлов
         use: ["ts-loader"], //обработчик
-        exclude: /node_modules/,
+        exclude: [
+          /node_modules/,
+          path.resolve(__dirname, "../customTemplates"),
+        ],
+      },
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: "css-loader",
+            options: {
+              modules: {
+                mode: "local",
+                localIdentName: "[name]__[local]--[hash:base64:5]",
+              },
+              onlyLocals: true,
+            },
+          },
+        ],
+        exclude: CLOBAL_CSS_REGEXP, //
+      },
+      {
+        test: CLOBAL_CSS_REGEXP,
+        use: ["css-loader"],
       },
     ],
   },
@@ -31,4 +57,9 @@ module.exports = {
     minimize: false,
     minimizer: [],
   },
+  plugins: [
+    new webpack.WatchIgnorePlugin([
+      path.resolve(__dirname, "../customTemplates"),
+    ]),
+  ],
 };
