@@ -1,0 +1,109 @@
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row nowrap;
+  margin: 0 20px;
+  padding: 10px 0;
+  width: 100%;
+}
+
+.carmaCounter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row nowrap;
+  padding: 5px 0;
+  width: 71px;
+}
+.up {
+  border: none;
+}
+.carmaValue {
+  font-weight: 500;
+  font-size: 12px;
+  color: var(--grayC4);
+}
+
+.down {
+  border: none;
+}
+
+.commentsButton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row nowrap;
+  border: none;
+  /* width: 34px; */
+  gap: 6px;
+}
+
+.commentsButton svg {
+  width: 15px;
+  height: 15px;
+}
+
+.commentNumbers {
+  font-weight: 500;
+  font-size: 12px;
+  color: var(--grayC4);
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row nowrap;
+  gap: 15px;
+}
+.shareButtons {
+  width: 20px;
+  height: 20px;
+  background-color: var(--grayC4);
+  border: none;
+  border-radius: 100%;
+}
+.saveButtons {
+  width: 20px;
+  height: 20px;
+  background-color: var(--grayC4);
+  border: none;
+  border-radius: 100%;
+}
+
+@media all and (min-width: 1024px) {
+  .controls {
+    width: 25px;
+    margin: 0;
+    padding: 0;
+    /* display: none; */
+  }
+
+  .commentsButton,
+  .actions {
+    display: none;
+  }
+
+  .carmaCounter {
+    flex-direction: column;
+    padding: 0;
+    height: 50px;
+  }
+}
+
+@media all and (min-width: 1540px) {
+  .controls {
+    position: relative;
+  }
+
+  .carmaCounter > button.up:hover > svg > path {
+    fill: var(--green);
+    transition: fill 0.3s ease-in-out;
+  }
+
+  .carmaCounter > button.down:hover > svg > path {
+    fill: var(--orange);
+    transition: fill 0.3s ease-in-out;
+  }
+}

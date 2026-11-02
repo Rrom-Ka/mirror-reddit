@@ -1,0 +1,143 @@
+.textConent {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 20px;
+  padding-bottom: 13px;
+}
+.metaData {
+  display: flex;
+  align-items: center;
+  padding-bottom: 7px;
+}
+
+.userLik {
+  display: flex;
+  align-items: center;
+  padding-right: 6px;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 7px;
+}
+
+.wrapimg {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--gray99);
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.username {
+  font-weight: 400;
+  font-size: 10px;
+  /* line-height: 12px; */
+  color: var(--orange);
+}
+
+.createdAt {
+  font-weight: 400;
+  font-size: 10px;
+  /* line-height: 12px; */
+}
+.createdAt,
+.createdAt > *,
+.publishedLabel {
+  color: var(--gray99);
+}
+
+.publishedLabel {
+  display: none;
+}
+
+.title {
+  margin: 0;
+  font-weight: 400;
+  font-size: 16px;
+  /* line-height: 19px; */
+  color: var(--black);
+}
+
+.title a {
+  transition: color 0.3s ease-in-out;
+}
+
+.postLink {
+  overflow: hidden;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+}
+
+@media all and (min-width: 1024px) {
+  .textConent {
+    flex-direction: column-reverse;
+    flex-basis: 672px;
+    align-items: start;
+    padding: 0;
+    margin: 0;
+    margin-right: auto;
+  }
+
+  .metaData {
+    flex-direction: row-reverse;
+    padding: 0;
+  }
+  .publishedLabel {
+    display: inline;
+    padding-right: 5px;
+    font-size: 16px;
+  }
+
+  .title {
+    font-size: 20px;
+    padding-bottom: 10px;
+  }
+
+  .createdAt {
+    font-size: 16px;
+    padding-right: 5px;
+  }
+
+  .username {
+    font-size: 14px;
+  }
+}
+
+@media all and (min-width: 1540px) {
+  .textConent {
+    flex-basis: 672px;
+  }
+
+  .title:hover a {
+    color: var(--orange);
+  }
+
+  .userLik:hover a {
+    text-decoration: underline;
+  }
+
+  .postLink::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .username {
+    position: relative;
+    z-index: 1;
+  }
+}

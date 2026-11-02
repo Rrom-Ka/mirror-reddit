@@ -1,0 +1,32 @@
+.preview {
+  min-height: 178px;
+}
+
+.previewImg {
+  min-height: 100%;
+  object-fit: cover;
+}
+
+@media all and (min-width: 1024px) {
+  .card {
+    position: static;
+    align-items: center;
+    /* flex-direction: row-reverse;
+    justify-content: start; */
+    padding-top: 0;
+    /* max-height: 107px; */
+  }
+
+  .preview {
+    order: -1;
+    max-width: 190px;
+    max-height: 107px;
+    min-height: 107px;
+    padding-right: 38px;
+  }
+
+  .previewImg {
+    max-height: 100%;
+    /* min-height: 100%; */
+  }
+}
