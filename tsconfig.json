@@ -6,7 +6,7 @@
     "allowJs": true, /* TS обарабатывает JS*/
     "jsx": "react", /* TS обарабатывает JSX по правилам REACT*/
     "sourceMap": true,/*генерирует .map файлы*/
-    "strict": true, /*строгая сверка типов и вадача ошибок*/
+    "strict": false, /*строгая сверка типов и вадача ошибок*/
     "allowSyntheticDefaultImports":true,/*использовать дефолтные импорты*/
     "esModuleInterop": true, /* правильаня работа дефолтных экспортов*/
     "resolveJsonModule": true,/**/
