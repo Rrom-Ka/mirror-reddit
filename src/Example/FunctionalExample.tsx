@@ -8,12 +8,12 @@
 // }
 
 import React, { Component } from "react";
-import { preventDefault } from "./preventDefault";
-import { stopPropagation } from "./stopPropagation";
-import { preventAll } from "./preventAll";
-import { pickFromSyntheticEvent } from "./pickFromSyntheticEvent";
-import { withKey } from "./withKey";
-import { withIdKey } from "./withIdKey";
+import { preventDefault } from "../utils/react/preventDefault";
+import { stopPropagation } from "../utils/react/stopPropagation";
+import { preventAll } from "../utils/react/preventAll";
+import { pickFromSyntheticEvent } from "../utils/react/pickFromSyntheticEvent";
+import { withKey } from "../utils/react/withKey";
+import { withIdKey } from "../utils/react/withIdKey";
 
 const add = (leftSide: number) => (rightSide: number) => leftSide + rightSide;
 add(1)(1); //->2
@@ -25,16 +25,16 @@ const addOne = add(1);
 addOne(5); //->6
 
 //Пример ф-и высшего порядка слушатель
-window.addEventListener("resize", () => {});
+// window.addEventListener("resize", () => {});
 function addEventListenerWithDisponce(element: any, name: any, handler: any) {
   element.addEventListener(name, handler);
   return () => element.removeEventListener(name, handler);
 }
 
-const disponce = addEventListenerWithDisponce(window, "resize", () => {
-  console.log("resize");
-  disponce();
-});
+// const disponce = addEventListenerWithDisponce(window, "resize", () => {
+//   console.log("resize");
+//   disponce();
+// });
 
 //если выражение в FeedwithIdKey( )заменить на withIdexKey то будет поиск поиндксу в withKey после component
 const withIdexKey = withKey();
