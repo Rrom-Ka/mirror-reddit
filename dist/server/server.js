@@ -106,7 +106,7 @@ eval("\n\n/*\n  MIT License http://www.opensource.org/licenses/mit-license.php\n
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {\r\n    Object.defineProperty(o, \"default\", { enumerable: true, value: v });\r\n}) : function(o, v) {\r\n    o[\"default\"] = v;\r\n});\r\nvar __importStar = (this && this.__importStar) || function (mod) {\r\n    if (mod && mod.__esModule) return mod;\r\n    var result = {};\r\n    if (mod != null) for (var k in mod) if (k !== \"default\" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);\r\n    __setModuleDefault(result, mod);\r\n    return result;\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.App = void 0;\r\n__webpack_require__(/*! ./main.global.css */ \"./src/main.global.css\");\r\nconst react_1 = __importStar(__webpack_require__(/*! react */ \"react\"));\r\nconst root_1 = __webpack_require__(/*! react-hot-loader/root */ \"react-hot-loader/root\");\r\nconst Header_1 = __webpack_require__(/*! ./shared/Header */ \"./src/shared/Header/index.ts\");\r\nconst Layout_1 = __webpack_require__(/*! ./shared/Layout/Layout */ \"./src/shared/Layout/Layout.tsx\");\r\nconst Content_1 = __webpack_require__(/*! ./shared/Content */ \"./src/shared/Content/index.ts\");\r\nconst CardLists_1 = __webpack_require__(/*! ./shared/CardLists */ \"./src/shared/CardLists/index.ts\");\r\nconst generateRandomIndex_1 = __webpack_require__(/*! ./utils/react/generateRandomIndex */ \"./src/utils/react/generateRandomIndex.ts\");\r\nconst merge_1 = __webpack_require__(/*! ./utils/js/merge */ \"./src/utils/js/merge.ts\");\r\nconst GenericList_1 = __webpack_require__(/*! ./shared/GenericList */ \"./src/shared/GenericList/index.ts\");\r\n//выносится из компоенента, тк в компоненет при каждом ренедре id будет пересчитываться\r\nconst LIST = [{ text: \"some\" }, { text: \"oversum\" }, { text: \"overs\" }].map(generateRandomIndex_1.generateId);\r\nfunction AppCoponent() {\r\n    const [list, setList] = react_1.useState(LIST);\r\n    const handleItemDelete = (id) => {\r\n        //через setList текущий список фильтруем где id !=== id\r\n        setList(list.filter((item) => item.id !== id));\r\n    };\r\n    const handleItemAdd = () => {\r\n        setList(list.concat(generateRandomIndex_1.generateId({ text: generateRandomIndex_1.generateRandomString() })));\r\n    };\r\n    return (react_1.default.createElement(Layout_1.Layout, null,\r\n        react_1.default.createElement(Header_1.Header, null),\r\n        react_1.default.createElement(Content_1.Content, null,\r\n            react_1.default.createElement(CardLists_1.CardLists, null),\r\n            react_1.default.createElement(\"button\", { onClick: handleItemAdd }, \"add\"),\r\n            react_1.default.createElement(GenericList_1.GenericList, { list: list.map(merge_1.merge({\r\n                    onClick: handleItemDelete,\r\n                })) }))));\r\n}\r\nexports.App = root_1.hot(() => react_1.default.createElement(AppCoponent, null)); //2.3 доп подключение react-hot-loader\r\n// export const App = AppCoponent;\r\n\n\n//# sourceURL=webpack:///./src/App.tsx?");
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.App = void 0;\r\n__webpack_require__(/*! ./main.global.css */ \"./src/main.global.css\");\r\nconst react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nconst root_1 = __webpack_require__(/*! react-hot-loader/root */ \"react-hot-loader/root\");\r\nconst Header_1 = __webpack_require__(/*! ./shared/Header */ \"./src/shared/Header/index.ts\");\r\nconst Layout_1 = __webpack_require__(/*! ./shared/Layout/Layout */ \"./src/shared/Layout/Layout.tsx\");\r\nconst Content_1 = __webpack_require__(/*! ./shared/Content */ \"./src/shared/Content/index.ts\");\r\nconst CardLists_1 = __webpack_require__(/*! ./shared/CardLists */ \"./src/shared/CardLists/index.ts\");\r\nconst Dropdown_1 = __webpack_require__(/*! ./shared/Dropdown */ \"./src/shared/Dropdown/index.ts\");\r\nfunction AppCoponent() {\r\n    return (react_1.default.createElement(Layout_1.Layout, null,\r\n        react_1.default.createElement(Header_1.Header, null),\r\n        react_1.default.createElement(Content_1.Content, null,\r\n            react_1.default.createElement(CardLists_1.CardLists, null),\r\n            react_1.default.createElement(\"div\", { style: { padding: 60 } },\r\n                react_1.default.createElement(Dropdown_1.Dropdown, { onClose: () => console.log(\"closed\"), onOpen: () => console.log(\"opned\"), isOpen: false, button: react_1.default.createElement(\"button\", null, \"test\") },\r\n                    react_1.default.createElement(CardLists_1.CardLists, null),\r\n                    react_1.default.createElement(\"ul\", null,\r\n                        react_1.default.createElement(\"li\", null, \"1\")))))));\r\n}\r\nexports.App = root_1.hot(() => react_1.default.createElement(AppCoponent, null)); //2.3 доп подключение react-hot-loader\r\n// export const App = AppCoponent;\r\n\n\n//# sourceURL=webpack:///./src/App.tsx?");
 
 /***/ }),
 
@@ -378,27 +378,38 @@ eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nva
 
 /***/ }),
 
-/***/ "./src/shared/GenericList/GenericList.tsx":
-/*!************************************************!*\
-  !*** ./src/shared/GenericList/GenericList.tsx ***!
-  \************************************************/
+/***/ "./src/shared/Dropdown/Dropdown.css":
+/*!******************************************!*\
+  !*** ./src/shared/Dropdown/Dropdown.css ***!
+  \******************************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.GenericList = void 0;\r\nconst react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nfunction GenericList({ list }) {\r\n    return (react_1.default.createElement(react_1.default.Fragment, null, list.map(({ As = \"div\", text, onClick, className, id, href }) => (react_1.default.createElement(As, { className: className, onClick: () => onClick(id), key: id, href: href }, text)))));\r\n}\r\nexports.GenericList = GenericList;\r\n\n\n//# sourceURL=webpack:///./src/shared/GenericList/GenericList.tsx?");
+eval("// Exports\nmodule.exports = {\n\t\"container\": \"Dropdown__container--3PArd\",\n\t\"listContainer\": \"Dropdown__listContainer--2Ugfa\",\n\t\"list\": \"Dropdown__list--2KHwx\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/Dropdown/Dropdown.css?");
 
 /***/ }),
 
-/***/ "./src/shared/GenericList/index.ts":
-/*!*****************************************!*\
-  !*** ./src/shared/GenericList/index.ts ***!
-  \*****************************************/
+/***/ "./src/shared/Dropdown/Dropdown.tsx":
+/*!******************************************!*\
+  !*** ./src/shared/Dropdown/Dropdown.tsx ***!
+  \******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __exportStar = (this && this.__exportStar) || function(m, exports) {\r\n    for (var p in m) if (p !== \"default\" && !exports.hasOwnProperty(p)) __createBinding(exports, m, p);\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n__exportStar(__webpack_require__(/*! ./GenericList */ \"./src/shared/GenericList/GenericList.tsx\"), exports);\r\n\n\n//# sourceURL=webpack:///./src/shared/GenericList/index.ts?");
+eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {\r\n    Object.defineProperty(o, \"default\", { enumerable: true, value: v });\r\n}) : function(o, v) {\r\n    o[\"default\"] = v;\r\n});\r\nvar __importStar = (this && this.__importStar) || function (mod) {\r\n    if (mod && mod.__esModule) return mod;\r\n    var result = {};\r\n    if (mod != null) for (var k in mod) if (k !== \"default\" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);\r\n    __setModuleDefault(result, mod);\r\n    return result;\r\n};\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.DropdownNotConroll = exports.Dropdown = void 0;\r\nconst react_1 = __importStar(__webpack_require__(/*! react */ \"react\"));\r\nconst Dropdown_css_1 = __importDefault(__webpack_require__(/*! ./Dropdown.css */ \"./src/shared/Dropdown/Dropdown.css\"));\r\nconst NOOP = () => { };\r\nfunction Dropdown({ button, children, isOpen, onClose = NOOP, onOpen = NOOP, }) {\r\n    const [isDropdownOpen, setIsDropdownOpen] = react_1.useState(isOpen);\r\n    react_1.useEffect(() => setIsDropdownOpen(isOpen), [isOpen]);\r\n    react_1.useEffect(() => (isDropdownOpen ? onOpen() : onClose()), [isDropdownOpen]);\r\n    const handleOpen = () => {\r\n        console.log(\"Dropdonw \", isOpen, isDropdownOpen);\r\n        // проверка если не перердана isopen то состояние переключается автомаитчески\r\n        if (isOpen === undefined) {\r\n            setIsDropdownOpen(isDropdownOpen);\r\n        }\r\n    };\r\n    return (react_1.default.createElement(\"div\", { className: Dropdown_css_1.default.container },\r\n        react_1.default.createElement(\"div\", { onClick: handleOpen },\r\n            button,\r\n            isDropdownOpen && (\r\n            // контерйнер для списка\r\n            react_1.default.createElement(\"div\", { className: Dropdown_css_1.default.listContainer },\r\n                react_1.default.createElement(\"div\", { className: Dropdown_css_1.default.list, onClick: () => setIsDropdownOpen(false) }, children))))));\r\n}\r\nexports.Dropdown = Dropdown;\r\nfunction DropdownNotConroll({ button, children }) {\r\n    const [isDropdownOpen, setIsDropdownOpen] = react_1.useState(false);\r\n    return (react_1.default.createElement(\"div\", { className: Dropdown_css_1.default.container },\r\n        react_1.default.createElement(\"div\", { onClick: () => setIsDropdownOpen(!isDropdownOpen) },\r\n            button,\r\n            isDropdownOpen && (\r\n            // контерйнер для списка\r\n            react_1.default.createElement(\"div\", { className: Dropdown_css_1.default.listContainer },\r\n                react_1.default.createElement(\"div\", { className: Dropdown_css_1.default.list, onClick: () => setIsDropdownOpen(false) }, children))))));\r\n}\r\nexports.DropdownNotConroll = DropdownNotConroll;\r\n\n\n//# sourceURL=webpack:///./src/shared/Dropdown/Dropdown.tsx?");
+
+/***/ }),
+
+/***/ "./src/shared/Dropdown/index.ts":
+/*!**************************************!*\
+  !*** ./src/shared/Dropdown/index.ts ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __exportStar = (this && this.__exportStar) || function(m, exports) {\r\n    for (var p in m) if (p !== \"default\" && !exports.hasOwnProperty(p)) __createBinding(exports, m, p);\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n__exportStar(__webpack_require__(/*! ./Dropdown */ \"./src/shared/Dropdown/Dropdown.tsx\"), exports);\r\n\n\n//# sourceURL=webpack:///./src/shared/Dropdown/index.ts?");
 
 /***/ }),
 
@@ -550,42 +561,6 @@ eval("// Exports\nmodule.exports = {\n\t\"layout\": \"Layout__layout--2UOc3\"\n}
 
 "use strict";
 eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.Layout = void 0;\r\nconst react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nconst styles = __webpack_require__(/*! ./Layout.css */ \"./src/shared/Layout/Layout.css\");\r\nfunction Layout({ children }) {\r\n    return react_1.default.createElement(\"div\", { className: styles.layout }, children);\r\n}\r\nexports.Layout = Layout;\r\n\n\n//# sourceURL=webpack:///./src/shared/Layout/Layout.tsx?");
-
-/***/ }),
-
-/***/ "./src/utils/js/assoc.ts":
-/*!*******************************!*\
-  !*** ./src/utils/js/assoc.ts ***!
-  \*******************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.assoc = void 0;\r\n//добавляет в объект некие занчения\r\n//принмает ключ и значение\r\nfunction assoc(key, value) {\r\n    //принимаем любой объект кот подходить под О\r\n    //типизация   если в объект ы был ключ мы его заменяем, если нет-добавляем\r\n    return (obj) => (Object.assign(Object.assign({}, obj), { [key]: value }));\r\n}\r\nexports.assoc = assoc;\r\n\n\n//# sourceURL=webpack:///./src/utils/js/assoc.ts?");
-
-/***/ }),
-
-/***/ "./src/utils/js/merge.ts":
-/*!*******************************!*\
-  !*** ./src/utils/js/merge.ts ***!
-  \*******************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.merge = void 0;\r\n//принимает длва объекта возвращает их склейку\r\nfunction merge(obj) {\r\n    return (obj2) => (Object.assign(Object.assign({}, obj), obj2));\r\n}\r\nexports.merge = merge;\r\n\n\n//# sourceURL=webpack:///./src/utils/js/merge.ts?");
-
-/***/ }),
-
-/***/ "./src/utils/react/generateRandomIndex.ts":
-/*!************************************************!*\
-  !*** ./src/utils/react/generateRandomIndex.ts ***!
-  \************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\r\n//генерируем рандомную строку\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.generateAssignId = exports.generateId = exports.assignId = exports.generateRandomString = void 0;\r\nconst assoc_1 = __webpack_require__(/*! ../js/assoc */ \"./src/utils/js/assoc.ts\");\r\n//nanoid\r\nexports.generateRandomString = () => Math.random().toString(36).substring(2, 15);\r\n//один раз сегнерируется generateRandomString для этого нудна доп ф-я ниже\r\n//эта ф-я вызвается один раз при вызове модуля\r\nexports.assignId = assoc_1.assoc('id', exports.generateRandomString());\r\n//вызывается каждый раз когда вызваем ф-ю\r\nexports.generateId = (obj) => assoc_1.assoc('id', exports.generateRandomString())(obj);\r\n//или\r\nexports.generateAssignId = (obj) => exports.assignId(obj);\r\n\n\n//# sourceURL=webpack:///./src/utils/react/generateRandomIndex.ts?");
 
 /***/ }),
 
