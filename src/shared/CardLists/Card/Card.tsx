@@ -13,12 +13,6 @@ export function Card() {
       <TextContent />
       <Preview />
       <Menu />
-
-      {/* <Dropdown button={<Menu />}>
-        <ul>
-          <li>1</li>
-        </ul>
-      </Dropdown> */}
       <Controls />
     </li>
   );

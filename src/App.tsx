@@ -13,18 +13,6 @@ function AppCoponent() {
       <Header />
       <Content>
         <CardLists />
-        {/* <div style={{ padding: 60 }}>
-          <Dropdown
-            // onClose={() => console.log("closed")}
-            // onOpen={() => console.log("opned")}
-            // isOpen={false}
-            button={<button>test</button>}
-          >
-            <ul>
-              <li>1</li>
-            </ul>
-          </Dropdown>
-        </div> */}
       </Content>
     </Layout>
   );
