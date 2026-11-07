@@ -30,7 +30,7 @@ export function Dropdown({
     console.log("Dropdonw ", isOpen, isDropdownOpen);
     // проверка если не перердана isopen то состояние переключается автомаитчески
     if (isOpen === undefined) {
-      setIsDropdownOpen(isDropdownOpen);
+      setIsDropdownOpen(!isDropdownOpen);
     }
   };
   return (
