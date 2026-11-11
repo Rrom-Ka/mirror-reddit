@@ -1,7 +1,7 @@
 import React from "react";
-import { preventDefault } from "../utils/react/preventDefault";
-import { stopPropagation } from "../utils/react/stopPropagation";
-import { getValue } from "./FunctionalExample";
+import { preventDefault } from "../utils/react/5_1_21m_preventDefault";
+import { stopPropagation } from "../utils/react/5_1_24_stopPropagation";
+import { getValue } from "./5_1_FunctionalExample";
 
 export function InputExample({ value, onChange }: any) {
   return (

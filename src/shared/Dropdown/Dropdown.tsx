@@ -27,7 +27,7 @@ export function Dropdown({
   useEffect(() => setIsDropdownOpen(isOpen), [isOpen]);
   useEffect(() => (isDropdownOpen ? onOpen() : onClose()), [isDropdownOpen]);
   const handleOpen = () => {
-    console.log("Dropdonw ", isOpen, isDropdownOpen);
+    // console.log("Dropdonw ", isOpen, isDropdownOpen);
     // проверка если не перердана isopen то состояние переключается автомаитчески
     if (isOpen === undefined) {
       setIsDropdownOpen(!isDropdownOpen);

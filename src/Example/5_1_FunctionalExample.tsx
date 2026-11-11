@@ -3,16 +3,20 @@
 //те откладваем вычисления , затем собираем аргументы
 //отложенный вызов функции
 //ф-я add() высшего порядка, те возврящают др ф-и или приниает др ф-и аргументом
-// function add(leftSide: number) {
-//   return (rightSide: number) => leftSide + rightSide;
-// }
+function add1(leftSide: number) {
+  return (rightSide: number) => leftSide + rightSide;
+}
+
+const addten = add1(10);
+const adright = addten(1);
+const ffff = add1(6)(2);
 
 import React, { Component } from "react";
-import { preventDefault } from "../utils/react/preventDefault";
-import { stopPropagation } from "../utils/react/stopPropagation";
-import { preventAll } from "../utils/react/preventAll";
-import { pickFromSyntheticEvent } from "../utils/react/pickFromSyntheticEvent";
-import { withKey } from "../utils/react/withKey";
+import { preventDefault } from "../utils/react/5_1_21m_preventDefault";
+import { stopPropagation } from "../utils/react/5_1_24_stopPropagation";
+import { preventAll } from "../utils/react/5_1_25m_preventAll";
+import { pickFromSyntheticEvent } from "../utils/react/5_1_14m_pickFromSyntheticEvent";
+import { withKey } from "../utils/react/5_1_6m_withKey";
 import { withIdKey } from "../utils/react/withIdKey";
 
 const add = (leftSide: number) => (rightSide: number) => leftSide + rightSide;
@@ -24,7 +28,7 @@ const addOne = add(1);
 //const addOne: (rightSide: number) => number
 addOne(5); //->6
 
-//Пример ф-и высшего порядка слушатель
+//5.1 4:00 Пример ф-и высшего порядка слушатель
 // window.addEventListener("resize", () => {});
 function addEventListenerWithDisponce(element: any, name: any, handler: any) {
   element.addEventListener(name, handler);
@@ -36,7 +40,7 @@ function addEventListenerWithDisponce(element: any, name: any, handler: any) {
 //   disponce();
 // });
 
-//если выражение в FeedwithIdKey( )заменить на withIdexKey то будет поиск поиндксу в withKey после component
+//5.1 6:00 если выражение в FeedwithIdKey( )заменить на withIdexKey то будет поиск поиндксу в withKey после component
 const withIdexKey = withKey();
 function FeedwithIdKey(props: { blocks: IBlockProps[] }) {
   return <div>{props.blocks.map(withIdKey(Block))}</div>;
@@ -133,7 +137,7 @@ export const getCheck = pickFromSyntheticEvent<HTMLInputElement>()("checked");
 
 //5.1 21:00 ф-я ссыылка не переходящая на др стр, делает што едругое
 
-function NotStandartLink(props) {
+function NotStandartLink(props: any) {
   //сброс стандартного поведения ссылки
   const handleClick = (e: React.SyntheticEvent<HTMLAnchorElement>) => {
     e.stopPropagation();
@@ -143,11 +147,11 @@ function NotStandartLink(props) {
   return <a onClick={handleClick}> HI</a>;
 }
 
-function NotStandartLinkFn(props) {
+function NotStandartLinkFn(props: any) {
   //сброс стандартного поведения ссылки
   return <a onClick={preventDefault(stopPropagation(props.onClick))}> HI</a>;
 }
-function NotStandartLinkFnAll(props) {
+function NotStandartLinkFnAll(props: any) {
   //сброс стандартного поведения ссылки
   return <a onClick={preventAll(props.onClick)}> HI</a>;
 }

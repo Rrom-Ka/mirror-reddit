@@ -96,13 +96,13 @@ export function MyHooksUseEffect({ title, id }: IMyHooksUseEffect) {
 }
 
 //возврат тру когда компоненет оказался примонтирован
-
+//5.2 10:00
 function useIsMounted() {
   const [isMounted, setIsMounted] = useState(false);
   //хотим чтобы занчение isMounted изменилось на тру
   //если зависимости [] useEfeect =>componentDidMount
   useEffect(() => {
     setIsMounted(true);
-  });
+  }, []);
   return [isMounted];
 }
