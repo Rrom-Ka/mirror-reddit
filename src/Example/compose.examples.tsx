@@ -33,6 +33,7 @@ function pipe<U>(...fns: Function[]) {
   return <E,>(initialValue: any): U =>
     fns.reduce((previousValue, fn) => fn(previousValue), initialValue);
 }
+
 //pick забирает из объект асвойства
 function pick<K extends string>(prop: K) {
   return <O extends Record<K, any>>(obj: O) => obj[prop];

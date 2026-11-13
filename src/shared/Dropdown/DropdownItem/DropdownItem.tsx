@@ -1,11 +1,9 @@
 import React from "react";
 import styles from "./DropdownItem.css";
 
-interface IDopdownItemProps {
+export interface IDopdownItemProps {
   icon: React.ReactNode;
-  // icon: React.JSX.Element;
   title: string;
-  // id: string;
   onClick: () => void;
 }
 
