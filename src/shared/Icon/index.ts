@@ -1,1 +1,6 @@
-export * from './MenuIcon'
+export * from './MenuDotsIconComponent'
+export * from './MenuCommentsIconComponent'
+export * from './MenuHideIconComponent'
+export * from './MenuReportIconComponent'
+export * from './MenuSaveIconComponent'
+export * from './MenuShareIconComponent'

@@ -8,7 +8,7 @@ import { useDeviceType } from "../../../../utils/hooks/useDeviceType";
 import { MenuDotsIcon } from "../../../../assets/svg/MenuIcon";
 import { renderMenuItems } from "./renderMenuItems";
 import { IHandleItem } from "./renderMenuItems";
-import { MenuIcon } from "../../../Icon";
+import { MenuDotsIconComponent } from "../../../Icon";
 
 //добавляем id
 const menuDataId = menuData.map(generateId);
@@ -27,15 +27,29 @@ export function Menu() {
       <Dropdown
         button={
           <button className={styles.menuButton}>
-            <MenuIcon />
+            <MenuDotsIconComponent />
           </button>
         }
       >
-        <ul className={styles.item}>
-          {renderMenuItems({ isTablaet, handlerItemClick })(menuList)}
-          {isTablaet !== "desctop" && <DropdownItemClose />}
-        </ul>
+        <div className={styles.item}>
+          menuItems
+          <DropdownItemClose />
+        </div>
       </Dropdown>
     </div>
   );
+  // return (
+  //   <div className={styles.menu}>
+  //     <Dropdown
+  //       button={<button className={styles.menuButton}>
+  //         <MenuIcon/>
+  //       </button>}
+  //     >
+  //       <ul className={styles.item}>
+  //         {renderMenuItems({ isTablaet, handlerItemClick })(menuList)}
+  //         {isTablaet !== "desctop" && <DropdownItemClose />}
+  //       </ul>
+  //     </Dropdown>
+  //   </div>
+  // );
 }

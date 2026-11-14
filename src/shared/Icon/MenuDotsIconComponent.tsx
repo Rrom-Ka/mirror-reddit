@@ -1,6 +1,6 @@
 import React from "react";
 
-export function MenuIcon() {
+export function MenuDotsIconComponent() {
   return (
     <svg
       width="5"
