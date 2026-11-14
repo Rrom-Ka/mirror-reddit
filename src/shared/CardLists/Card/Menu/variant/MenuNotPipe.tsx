@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Menu.css";
-import { Dropdown } from "../../../Dropdown";
+import { Dropdown } from "../../../../Dropdown";
 import {
   DropdownItem,
   IDopdownItemProps,
-} from "../../../Dropdown/DropdownItem";
-import { menuData } from "../../../../utils/data/menuData";
-import { generateId } from "../../../../utils/react/generateRandomIndex";
-import { DropdownItemClose } from "../../../Dropdown/DropdownItemClose";
-import { useDeviceType } from "../../../../utils/hooks/useDeviceType";
-import { MenuDotsIcon } from "../../../../assets/svg/MenuIcon";
-import { withIdKey } from "../../../../utils/react/withIdKey";
-import { merge } from "../../../../utils/js/merge";
-import { pipe } from "../../../../utils/react/pipe";
+} from "../../../../Dropdown/DropdownItem";
+import { menuData } from "../../../../../utils/data/menuData";
+import { generateId } from "../../../../../utils/react/generateRandomIndex";
+import { DropdownItemClose } from "../../../../Dropdown/DropdownItemClose";
+import { useDeviceType } from "../../../../../utils/hooks/useDeviceType";
+import { MenuDotsIcon } from "../../../../../assets/svg/MenuIcon";
+import { withIdKey } from "../../../../../utils/react/withIdKey";
+import { merge } from "../../../../../utils/js/merge";
+import { pipe } from "../../../../../utils/react/pipe";
 
 //добавляем id
 interface IHandleItem {

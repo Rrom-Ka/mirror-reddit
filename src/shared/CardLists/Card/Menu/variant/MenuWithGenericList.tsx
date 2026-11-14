@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Menu.css";
-import { Dropdown } from "../../../Dropdown";
-import { menuData } from "../../../../utils/data/menuData";
-import { generateId } from "../../../../utils/react/generateRandomIndex";
-import { DropdownItemClose } from "../../../Dropdown/DropdownItemClose";
-import { useDeviceType } from "../../../../utils/hooks/useDeviceType";
-import { MenuDotsIcon } from "../../../../assets/svg/MenuIcon";
-import { renderMenuItems, renderMenuItemsGenericList } from "./renderMenuItems";
-import { IHandleItem } from "./renderMenuItems";
+import { Dropdown } from "../../../../Dropdown";
+import { menuData } from "../../../../../utils/data/menuData";
+import { generateId } from "../../../../../utils/react/generateRandomIndex";
+import { DropdownItemClose } from "../../../../Dropdown/DropdownItemClose";
+import { useDeviceType } from "../../../../../utils/hooks/useDeviceType";
+import { MenuDotsIcon } from "../../../../../assets/svg/MenuIcon";
+import {
+  renderMenuItems,
+  renderMenuItemsGenericList,
+} from "../renderMenuItems";
+import { IHandleItem } from "../renderMenuItems";
 import stylesExport from "../../../Dropdown/DropdownItem/DropdownItem.css";
 
 //добавляем id
