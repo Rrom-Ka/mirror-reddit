@@ -53,19 +53,6 @@ export function Menu() {
         button={<button className={styles.menuButton}>{MenuDotsIcon}</button>}
       >
         <ul className={styles.item}>
-          {/* {menuList
-            .filter((item) =>
-              isTablaet === "mobile"
-                ? item.title === "Скрыть" || item.title === "Пожаловаться"
-                : true,
-            )
-            //добавляем в массив onClick
-            .map((item) =>
-              merge({
-                onClick: handlerItemClick(item),
-              })(item),
-            )
-            .map(withIdKey(DropdownItem))} */}
           {renderMenuItems(menuList)}
           {isTablaet !== "desctop" && <DropdownItemClose />}
         </ul>
