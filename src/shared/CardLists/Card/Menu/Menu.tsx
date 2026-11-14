@@ -8,6 +8,7 @@ import { useDeviceType } from "../../../../utils/hooks/useDeviceType";
 import { MenuDotsIcon } from "../../../../assets/svg/MenuIcon";
 import { renderMenuItems } from "./renderMenuItems";
 import { IHandleItem } from "./renderMenuItems";
+import { MenuIcon } from "../../../Icon";
 
 //добавляем id
 const menuDataId = menuData.map(generateId);
@@ -24,7 +25,11 @@ export function Menu() {
   return (
     <div className={styles.menu}>
       <Dropdown
-        button={<button className={styles.menuButton}>{MenuDotsIcon}</button>}
+        button={
+          <button className={styles.menuButton}>
+            <MenuIcon />
+          </button>
+        }
       >
         <ul className={styles.item}>
           {renderMenuItems({ isTablaet, handlerItemClick })(menuList)}
