@@ -7,7 +7,7 @@
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-  gap: 6px;
+  /* gap: 6px; */
 }
 
 .menuItem > svg + span {

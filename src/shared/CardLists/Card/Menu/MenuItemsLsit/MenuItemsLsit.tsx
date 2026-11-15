@@ -6,6 +6,7 @@ import {
 } from "../../../../Icon";
 import { Text } from "../../../../HOC/Text";
 import { Ecolors } from "../../../../../types/Ecolors";
+import { Break } from "../../../../HOC/Break";
 
 interface IMenuItemsLsitProps {
   postId: string;
@@ -16,6 +17,7 @@ export function MenuItemsLsit({ postId }: IMenuItemsLsitProps) {
     <ul className={styles.menuItemsList}>
       <li className={styles.menuItem} onClick={() => console.log(postId)}>
         <MenuHideIconComponent />
+        <Break size={12} />
         <Text size={12} color={Ecolors.gray99}>
           Скрыть
         </Text>
@@ -23,6 +25,7 @@ export function MenuItemsLsit({ postId }: IMenuItemsLsitProps) {
       <div className={styles.divider} />
       <li className={styles.menuItem} onClick={() => console.log(postId)}>
         <MenuReportIconComponent />
+        <Break size={12} />
         <Text size={12} color={Ecolors.gray99}>
           Пожаловаться
         </Text>
