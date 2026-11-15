@@ -3,12 +3,13 @@ import styles from "./Menu.css";
 import { Dropdown } from "../../../Dropdown";
 import { menuData } from "../../../../utils/data/menuData";
 import { generateId } from "../../../../utils/react/generateRandomIndex";
-import { DropdownItemClose } from "../../../Dropdown/DropdownItemClose";
+import stylesDropdownItemClose from "../../../Dropdown/DropdownItemClose/DropdownItemClose.css";
 import { useDeviceType } from "../../../../utils/hooks/useDeviceType";
 import { MenuDotsIcon } from "../../../../assets/svg/MenuIcon";
 import { renderMenuItems } from "./renderMenuItems";
 import { IHandleItem } from "./renderMenuItems";
 import { MenuDotsIconComponent } from "../../../Icon";
+import { MenuItemsLsit } from "./MenuItemsLsit";
 
 //добавляем id
 const menuDataId = menuData.map(generateId);
@@ -32,8 +33,10 @@ export function Menu() {
         }
       >
         <div className={styles.item}>
-          menuItems
-          <DropdownItemClose />
+          <MenuItemsLsit postId={"123"} />
+          <div className={stylesDropdownItemClose.dropdownItemClose}>
+            <h3 className={stylesDropdownItemClose.title}>Закрыть</h3>
+          </div>
         </div>
       </Dropdown>
     </div>
