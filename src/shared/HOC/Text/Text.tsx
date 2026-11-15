@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Text.css";
 import classNames from "classnames";
-import { Ecolors } from "../../types/Ecolors";
+import { Ecolors } from "../../../types/Ecolors";
 
 type TSizes = 28 | 20 | 20 | 14 | 12 | 10;
 

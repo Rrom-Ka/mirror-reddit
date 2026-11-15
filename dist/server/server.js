@@ -257,7 +257,7 @@ eval("// Exports\nmodule.exports = {\n\t\"menuItemsLsit\": \"MenuItemsLsit__menu
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.MenuItemsLsit = void 0;\r\nconst react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nconst MenuItemsLsit_css_1 = __importDefault(__webpack_require__(/*! ./MenuItemsLsit.css */ \"./src/shared/CardLists/Card/Menu/MenuItemsLsit/MenuItemsLsit.css\"));\r\nconst Icon_1 = __webpack_require__(/*! ../../../../Icon */ \"./src/shared/Icon/index.ts\");\r\nconst Text_1 = __webpack_require__(/*! ../../../../Text */ \"./src/shared/Text/index.ts\");\r\nconst Ecolors_1 = __webpack_require__(/*! ../../../../../types/Ecolors */ \"./src/types/Ecolors.tsx\");\r\nfunction MenuItemsLsit({ postId }) {\r\n    return (react_1.default.createElement(\"ul\", { className: MenuItemsLsit_css_1.default.menuItemsList },\r\n        react_1.default.createElement(\"li\", { className: MenuItemsLsit_css_1.default.menuItem, onClick: () => console.log(postId) },\r\n            react_1.default.createElement(Icon_1.MenuHideIconComponent, null),\r\n            react_1.default.createElement(Text_1.Text, { size: 12, color: Ecolors_1.Ecolors.gray99 }, \"\\u0421\\u043A\\u0440\\u044B\\u0442\\u044C\")),\r\n        react_1.default.createElement(\"div\", { className: MenuItemsLsit_css_1.default.divider }),\r\n        react_1.default.createElement(\"li\", { className: MenuItemsLsit_css_1.default.menuItem, onClick: () => console.log(postId) },\r\n            react_1.default.createElement(Icon_1.MenuReportIconComponent, null),\r\n            react_1.default.createElement(Text_1.Text, { size: 12, color: Ecolors_1.Ecolors.gray99 }, \"\\u041F\\u043E\\u0436\\u0430\\u043B\\u043E\\u0432\\u0430\\u0442\\u044C\\u0441\\u044F\"))));\r\n}\r\nexports.MenuItemsLsit = MenuItemsLsit;\r\n\n\n//# sourceURL=webpack:///./src/shared/CardLists/Card/Menu/MenuItemsLsit/MenuItemsLsit.tsx?");
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.MenuItemsLsit = void 0;\r\nconst react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nconst MenuItemsLsit_css_1 = __importDefault(__webpack_require__(/*! ./MenuItemsLsit.css */ \"./src/shared/CardLists/Card/Menu/MenuItemsLsit/MenuItemsLsit.css\"));\r\nconst Icon_1 = __webpack_require__(/*! ../../../../Icon */ \"./src/shared/Icon/index.ts\");\r\nconst Text_1 = __webpack_require__(/*! ../../../../HOC/Text */ \"./src/shared/HOC/Text/index.ts\");\r\nconst Ecolors_1 = __webpack_require__(/*! ../../../../../types/Ecolors */ \"./src/types/Ecolors.tsx\");\r\nfunction MenuItemsLsit({ postId }) {\r\n    return (react_1.default.createElement(\"ul\", { className: MenuItemsLsit_css_1.default.menuItemsList },\r\n        react_1.default.createElement(\"li\", { className: MenuItemsLsit_css_1.default.menuItem, onClick: () => console.log(postId) },\r\n            react_1.default.createElement(Icon_1.MenuHideIconComponent, null),\r\n            react_1.default.createElement(Text_1.Text, { size: 12, color: Ecolors_1.Ecolors.gray99 }, \"\\u0421\\u043A\\u0440\\u044B\\u0442\\u044C\")),\r\n        react_1.default.createElement(\"div\", { className: MenuItemsLsit_css_1.default.divider }),\r\n        react_1.default.createElement(\"li\", { className: MenuItemsLsit_css_1.default.menuItem, onClick: () => console.log(postId) },\r\n            react_1.default.createElement(Icon_1.MenuReportIconComponent, null),\r\n            react_1.default.createElement(Text_1.Text, { size: 12, color: Ecolors_1.Ecolors.gray99 }, \"\\u041F\\u043E\\u0436\\u0430\\u043B\\u043E\\u0432\\u0430\\u0442\\u044C\\u0441\\u044F\"))));\r\n}\r\nexports.MenuItemsLsit = MenuItemsLsit;\r\n\n\n//# sourceURL=webpack:///./src/shared/CardLists/Card/Menu/MenuItemsLsit/MenuItemsLsit.tsx?");
 
 /***/ }),
 
@@ -468,6 +468,41 @@ eval("// Exports\nmodule.exports = {\n\t\"dropdownItemClose\": \"DropdownItemClo
 
 "use strict";
 eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __exportStar = (this && this.__exportStar) || function(m, exports) {\r\n    for (var p in m) if (p !== \"default\" && !exports.hasOwnProperty(p)) __createBinding(exports, m, p);\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n__exportStar(__webpack_require__(/*! ./Dropdown */ \"./src/shared/Dropdown/Dropdown.tsx\"), exports);\r\n\n\n//# sourceURL=webpack:///./src/shared/Dropdown/index.ts?");
+
+/***/ }),
+
+/***/ "./src/shared/HOC/Text/Text.css":
+/*!**************************************!*\
+  !*** ./src/shared/HOC/Text/Text.css ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("// Exports\nmodule.exports = {\n\t\"s28\": \"Text__s28--34yrd\",\n\t\"s20\": \"Text__s20--2rn6r\",\n\t\"s16\": \"Text__s16--2Giug\",\n\t\"s14\": \"Text__s14--3piux\",\n\t\"s12\": \"Text__s12--eZwez\",\n\t\"s10\": \"Text__s10--3BwER\",\n\t\"bold\": \"Text__bold--EYwNf\",\n\t\"orange\": \"Text__orange--QCDxF\",\n\t\"black\": \"Text__black--1r3Zy\",\n\t\"gray66\": \"Text__gray66--n5Epv\",\n\t\"gray99\": \"Text__gray99--1b8eI\",\n\t\"grayC4\": \"Text__grayC4--1t0tg\",\n\t\"grayD9\": \"Text__grayD9--3wXWz\",\n\t\"grayEC\": \"Text__grayEC--7aJra\",\n\t\"grayF3\": \"Text__grayF3--1Ikl-\",\n\t\"grayF4\": \"Text__grayF4--3mS-X\",\n\t\"green\": \"Text__green--37XOi\",\n\t\"white\": \"Text__white--3xF1S\",\n\t\"m28\": \"Text__m28--8D8JX\",\n\t\"m20\": \"Text__m20--2csuD\",\n\t\"m16\": \"Text__m16--qjiE9\",\n\t\"m14\": \"Text__m14--1F6EG\",\n\t\"m12\": \"Text__m12--6wwNo\",\n\t\"m10\": \"Text__m10--33e95\",\n\t\"t28\": \"Text__t28--Fh7s7\",\n\t\"t20\": \"Text__t20--3LuQ8\",\n\t\"t16\": \"Text__t16--2LO3Y\",\n\t\"t14\": \"Text__t14--1A5-0\",\n\t\"t12\": \"Text__t12--3XSOH\",\n\t\"t10\": \"Text__t10--2BkXO\",\n\t\"d28\": \"Text__d28--3DkRL\",\n\t\"d20\": \"Text__d20--1m1hl\",\n\t\"d16\": \"Text__d16--LnlAW\",\n\t\"d14\": \"Text__d14--2xAGy\",\n\t\"d12\": \"Text__d12--1ymlL\",\n\t\"d10\": \"Text__d10--5Svwn\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/HOC/Text/Text.css?");
+
+/***/ }),
+
+/***/ "./src/shared/HOC/Text/Text.tsx":
+/*!**************************************!*\
+  !*** ./src/shared/HOC/Text/Text.tsx ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.Text = void 0;\r\nconst react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nconst Text_css_1 = __importDefault(__webpack_require__(/*! ./Text.css */ \"./src/shared/HOC/Text/Text.css\"));\r\nconst classnames_1 = __importDefault(__webpack_require__(/*! classnames */ \"classnames\"));\r\nconst Ecolors_1 = __webpack_require__(/*! ../../../types/Ecolors */ \"./src/types/Ecolors.tsx\");\r\nfunction Text(props) {\r\n    //деструкция props\r\n    const { As = \"span\", color = Ecolors_1.Ecolors.black, bold = false, children, size, mobileSize, tabletSize, descTopSize, } = props;\r\n    //использование билиотеки класснамес\r\n    //параметры -стили кот смерджим\r\n    const classes = classnames_1.default(Text_css_1.default[`${size}`], Text_css_1.default[color], { [Text_css_1.default.bold]: bold }, { [Text_css_1.default[`m${mobileSize}`]]: mobileSize }, //выполнется если передаем значение\r\n    { [Text_css_1.default[`t${tabletSize}`]]: tabletSize }, { [Text_css_1.default[`d${descTopSize}`]]: descTopSize });\r\n    return react_1.default.createElement(As, { className: classes }, children);\r\n}\r\nexports.Text = Text;\r\n// export enum Ecolors {\r\n//   black = \"var(--black)\",\r\n//   orange = \"var(--orange)\",\r\n//   green = \"var(--green)\",\r\n//   white = \"var(--white)\",\r\n//   grayF4 = \"var(--grayF4)\",\r\n//   grayF3 = \"var(--grayF3)\",\r\n//   grayC4 = \"var(--grayC4)\",\r\n//   gray66 = \"var(--gray66)\",\r\n//   gray99 = \"var(--gray99)\",\r\n//   grayEC = \"var(--grayEC)\",\r\n// }\r\n\n\n//# sourceURL=webpack:///./src/shared/HOC/Text/Text.tsx?");
+
+/***/ }),
+
+/***/ "./src/shared/HOC/Text/index.ts":
+/*!**************************************!*\
+  !*** ./src/shared/HOC/Text/index.ts ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __exportStar = (this && this.__exportStar) || function(m, exports) {\r\n    for (var p in m) if (p !== \"default\" && !exports.hasOwnProperty(p)) __createBinding(exports, m, p);\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n__exportStar(__webpack_require__(/*! ./Text */ \"./src/shared/HOC/Text/Text.tsx\"), exports);\r\n\n\n//# sourceURL=webpack:///./src/shared/HOC/Text/index.ts?");
 
 /***/ }),
 
@@ -703,41 +738,6 @@ eval("// Exports\nmodule.exports = {\n\t\"layout\": \"Layout__layout--2UOc3\"\n}
 
 "use strict";
 eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.Layout = void 0;\r\nconst react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nconst styles = __webpack_require__(/*! ./Layout.css */ \"./src/shared/Layout/Layout.css\");\r\nfunction Layout({ children }) {\r\n    return react_1.default.createElement(\"div\", { className: styles.layout }, children);\r\n}\r\nexports.Layout = Layout;\r\n\n\n//# sourceURL=webpack:///./src/shared/Layout/Layout.tsx?");
-
-/***/ }),
-
-/***/ "./src/shared/Text/Text.css":
-/*!**********************************!*\
-  !*** ./src/shared/Text/Text.css ***!
-  \**********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("// Exports\nmodule.exports = {\n\t\"s28\": \"Text__s28--1-LUr\",\n\t\"s20\": \"Text__s20--18O_5\",\n\t\"s16\": \"Text__s16--3D4K7\",\n\t\"s14\": \"Text__s14--ujhsj\",\n\t\"s12\": \"Text__s12--qtka7\",\n\t\"s10\": \"Text__s10--1Rsrw\",\n\t\"bold\": \"Text__bold--BJKDH\",\n\t\"orange\": \"Text__orange--3RA7_\",\n\t\"black\": \"Text__black--22NkL\",\n\t\"gray66\": \"Text__gray66--3SajZ\",\n\t\"gray99\": \"Text__gray99--26K-E\",\n\t\"grayC4\": \"Text__grayC4--1yApu\",\n\t\"grayD9\": \"Text__grayD9--1gqEB\",\n\t\"grayEC\": \"Text__grayEC--1Oxrt\",\n\t\"grayF3\": \"Text__grayF3--LKScH\",\n\t\"grayF4\": \"Text__grayF4--3z4DU\",\n\t\"green\": \"Text__green--3nBG1\",\n\t\"white\": \"Text__white--2h9-E\",\n\t\"m28\": \"Text__m28--DEFuX\",\n\t\"m20\": \"Text__m20--2y1oW\",\n\t\"m16\": \"Text__m16--3iKi_\",\n\t\"m14\": \"Text__m14--3wMqQ\",\n\t\"m12\": \"Text__m12--1M62Y\",\n\t\"m10\": \"Text__m10--2uWf_\",\n\t\"t28\": \"Text__t28--n-yrv\",\n\t\"t20\": \"Text__t20--29Xlr\",\n\t\"t16\": \"Text__t16--20vrW\",\n\t\"t14\": \"Text__t14--2dnqN\",\n\t\"t12\": \"Text__t12--3tesc\",\n\t\"t10\": \"Text__t10--1lzDC\",\n\t\"d28\": \"Text__d28--2wTh4\",\n\t\"d20\": \"Text__d20--3xT0T\",\n\t\"d16\": \"Text__d16--3KVHQ\",\n\t\"d14\": \"Text__d14--JeFqG\",\n\t\"d12\": \"Text__d12--E9qF6\",\n\t\"d10\": \"Text__d10--38i3r\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/Text/Text.css?");
-
-/***/ }),
-
-/***/ "./src/shared/Text/Text.tsx":
-/*!**********************************!*\
-  !*** ./src/shared/Text/Text.tsx ***!
-  \**********************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.Text = void 0;\r\nconst react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nconst Text_css_1 = __importDefault(__webpack_require__(/*! ./Text.css */ \"./src/shared/Text/Text.css\"));\r\nconst classnames_1 = __importDefault(__webpack_require__(/*! classnames */ \"classnames\"));\r\nconst Ecolors_1 = __webpack_require__(/*! ../../types/Ecolors */ \"./src/types/Ecolors.tsx\");\r\nfunction Text(props) {\r\n    //деструкция props\r\n    const { As = \"span\", color = Ecolors_1.Ecolors.black, bold = false, children, size, mobileSize, tabletSize, descTopSize, } = props;\r\n    //использование билиотеки класснамес\r\n    //параметры -стили кот смерджим\r\n    const classes = classnames_1.default(Text_css_1.default[`${size}`], Text_css_1.default[color], { [Text_css_1.default.bold]: bold }, { [Text_css_1.default[`m${mobileSize}`]]: mobileSize }, //выполнется если передаем значение\r\n    { [Text_css_1.default[`t${tabletSize}`]]: tabletSize }, { [Text_css_1.default[`d${descTopSize}`]]: descTopSize });\r\n    return react_1.default.createElement(As, { className: classes }, children);\r\n}\r\nexports.Text = Text;\r\n// export enum Ecolors {\r\n//   black = \"var(--black)\",\r\n//   orange = \"var(--orange)\",\r\n//   green = \"var(--green)\",\r\n//   white = \"var(--white)\",\r\n//   grayF4 = \"var(--grayF4)\",\r\n//   grayF3 = \"var(--grayF3)\",\r\n//   grayC4 = \"var(--grayC4)\",\r\n//   gray66 = \"var(--gray66)\",\r\n//   gray99 = \"var(--gray99)\",\r\n//   grayEC = \"var(--grayEC)\",\r\n// }\r\n\n\n//# sourceURL=webpack:///./src/shared/Text/Text.tsx?");
-
-/***/ }),
-
-/***/ "./src/shared/Text/index.ts":
-/*!**********************************!*\
-  !*** ./src/shared/Text/index.ts ***!
-  \**********************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __exportStar = (this && this.__exportStar) || function(m, exports) {\r\n    for (var p in m) if (p !== \"default\" && !exports.hasOwnProperty(p)) __createBinding(exports, m, p);\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n__exportStar(__webpack_require__(/*! ./Text */ \"./src/shared/Text/Text.tsx\"), exports);\r\n\n\n//# sourceURL=webpack:///./src/shared/Text/index.ts?");
 
 /***/ }),
 

@@ -4,7 +4,7 @@ import {
   MenuHideIconComponent,
   MenuReportIconComponent,
 } from "../../../../Icon";
-import { Text } from "../../../../Text";
+import { Text } from "../../../../HOC/Text";
 import { Ecolors } from "../../../../../types/Ecolors";
 
 interface IMenuItemsLsitProps {
