@@ -1,4 +1,7 @@
 import React from "react";
+interface IIconComponentProps {
+  className?: string;
+}
 
 export function MenuDotsIconComponent() {
   return (

@@ -18,13 +18,14 @@ body {
   padding: 0;
   margin: 0;
   background: var(--grayF4);
+  color: var(--black);
   font-size: 14px;
   line-height: 1.2;
   font-family: "Roboto", sans-serif;
 }
 
 * {
-  color: var(--black);
+  /* color: var(--black); */
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

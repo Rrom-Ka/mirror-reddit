@@ -10,6 +10,8 @@ import { renderMenuItems } from "./renderMenuItems";
 import { IHandleItem } from "./renderMenuItems";
 import { MenuDotsIconComponent } from "../../../Icon";
 import { MenuItemsLsit } from "./MenuItemsLsit";
+import { EIcons, Icon } from "../../../HOC/Icon";
+import { EcolorsVar } from "../../../../types/Ecolors";
 
 //добавляем id
 const menuDataId = menuData.map(generateId);
@@ -28,7 +30,13 @@ export function Menu() {
       <Dropdown
         button={
           <button className={styles.menuButton}>
-            <MenuDotsIconComponent />
+            {/* <MenuDotsIconComponent /> */}
+            <Icon
+              name={EIcons.Dots}
+              size={20}
+              width={5}
+              color={EcolorsVar.grayD9}
+            />
           </button>
         }
       >

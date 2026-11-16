@@ -1,0 +1,44 @@
+/* Базовые стили обертки, чтобы она вела себя как строчный блок и не ломала верстку */
+.wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Растягиваем сам SVG на 100% размеров обертки */
+.wrapper svg {
+  width: 100%;
+  height: 100%;
+  color: inherit;
+}
+
+/* Перекрашиваем внутренние фигуры (circle, path и т.д.), если задан цвет */
+.wrapper svg path,
+.wrapper svg circle {
+  fill: currentColor;
+}
+
+.s20 {
+  width: 20px;
+  height: 20px;
+}
+.s15 {
+  width: 15px;
+  height: 15px;
+}
+.s14 {
+  width: 14px;
+  height: 14px;
+}
+
+.w16 {
+  width: 16px;
+}
+
+.w12 {
+  width: 12px;
+}
+
+.w5 {
+  width: 5px;
+}

@@ -1,4 +1,5 @@
 .menuItemsLsit {
+  width: 100%;
   padding: 0 20px;
 }
 
@@ -7,7 +8,21 @@
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
+  cursor: pointer;
   /* gap: 6px; */
+}
+
+.menuItem:hover,
+.menuItem:focus,
+.menuitem:active,
+.menuItem:hover span,
+.menuItem:focus span,
+.menuitem:active span,
+.menuItem:hover span svg,
+.menuItem:focus span svg,
+.menuitem:active span svg {
+  color: var(--orange);
+  fill: orange;
 }
 
 .menuItem > svg + span {
