@@ -15,7 +15,7 @@
     "resolveJsonModule": true,/**/
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "types":[]
+    "types":["jest", "node"]
   },
   "exclude": ["node_modules", "bin", "cfg", "webpack.config.js", "webpack.client.config.js", "webpack.server.config.js", "customTemplates"]
 }
