@@ -1,6 +1,7 @@
 const path = require("path");
 const webpack = require("webpack");
 const nodeExternals = require("webpack-node-externals");
+const { DefinePlugin } = require("webpack");
 
 const NODE_ENV = process.env.NODE_ENV;
 //глобальный стили будут заканчиваться
@@ -61,5 +62,8 @@ module.exports = {
     new webpack.WatchIgnorePlugin([
       path.resolve(__dirname, "../customTemplates"),
     ]),
+    new DefinePlugin({
+      "process.env.CLIENT_ID": `'${process.env.CLIENT_ID}'`,
+    }),
   ],
 };

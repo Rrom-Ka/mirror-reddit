@@ -1,6 +1,6 @@
 const path = require("path");
 const webpack = require("webpack");
-const { HotModuleReplacementPlugin } = require("webpack"); //подключение @hot-loader/react-dom
+const { HotModuleReplacementPlugin, DefinePlugin } = require("webpack"); //подключение @hot-loader/react-dom
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 const NODE_ENV = process.env.NODE_ENV;
@@ -9,7 +9,14 @@ const IS_PROD = NODE_ENV === "production";
 
 //глобальный стили будут заканчиваться
 const CLOBAL_CSS_REGEXP = /\.global\.css$/;
-
+//плагины, некоторые будут использованы в прод и дев
+const DEV_PLUGINS = [
+  new CleanWebpackPlugin(),
+  new HotModuleReplacementPlugin(),
+];
+const COMMON_PLUGINS = [
+  new DefinePlugin({ "process.env.CLIENT_ID": `'${process.env.CLIENT_ID}'` }),
+];
 //для поиска ошибок в продакшенеа false
 function setupDevtool() {
   if (IS_DEV) return "eval";
@@ -77,9 +84,7 @@ module.exports = {
     new webpack.WatchIgnorePlugin([
       path.resolve(__dirname, "../customTemplates"),
     ]),
-    ...(IS_DEV
-      ? [new CleanWebpackPlugin(), new HotModuleReplacementPlugin()]
-      : []),
+    ...(IS_DEV ? DEV_PLUGINS.concat(COMMON_PLUGINS) : COMMON_PLUGINS),
   ],
 };
 

@@ -6,7 +6,7 @@
     "build:dev": "env NODE_ENV=development webpack --config webpack.config.js",
     "build:prod": "env NODE_ENV=production webpack --config webpack.config.js",
     "0dev": "env NODE_ENV=development webpack-dev-server node ./bin/dev.js",
-    "dev": "env NODE_ENV=development node ./bin/dev.js",
+    "dev": "env NODE_ENV=development CLIENT_ID=client_id node ./bin/dev.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "gc": "npx generate-react-cli component",
     "gc-dirs": "npx generate-react-cli component --path=src/shared/",

@@ -15,6 +15,12 @@ app.get("/", (req, res) => {
   res.send(indexTemlate(ReactDOM.renderToString(<App />)));
 });
 
+app.get("/auth", (req, res) => {
+  //достае инденитфицирующий код
+  //req.query.code
+  res.send(indexTemlate(ReactDOM.renderToString(<App />)));
+});
+
 app.listen(3000, () => {
   console.log("Server started on http://localhost:3000");
 });
