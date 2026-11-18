@@ -22,5 +22,6 @@
     border-radius: 0;
     box-shadow: none;
     order: 3;
+    margin-left: auto;
   }
 }

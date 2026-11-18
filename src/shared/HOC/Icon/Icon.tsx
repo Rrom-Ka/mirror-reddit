@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./Icon.css";
 import classNames from "classnames";
 import {
+  IconAnonComponent,
   MenuCommentsIconComponent,
   MenuDotsIconComponent,
   MenuHideIconComponent,
@@ -18,6 +19,7 @@ export enum EIcons {
   Report = "Report",
   Save = "Save",
   Share = "Share",
+  Anon = "Anon",
 }
 
 const IconComponentsList: Record<
@@ -30,9 +32,10 @@ const IconComponentsList: Record<
   Report: MenuReportIconComponent,
   Save: MenuSaveIconComponent,
   Share: MenuShareIconComponent,
+  Anon: IconAnonComponent,
 };
 
-type TSizes = 20 | 15 | 14;
+type TSizes = 50 | 20 | 15 | 14;
 type TWidth = 16 | 12 | 5;
 
 export interface IIconProps {

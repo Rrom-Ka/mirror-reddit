@@ -513,7 +513,7 @@ eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("// Exports\nmodule.exports = {\n\t\"wrapper\": \"Icon__wrapper--2ZQ9w\",\n\t\"s20\": \"Icon__s20--396wc\",\n\t\"s15\": \"Icon__s15--2pVJ-\",\n\t\"s14\": \"Icon__s14--_YprI\",\n\t\"w16\": \"Icon__w16--3ztsI\",\n\t\"w12\": \"Icon__w12--oQ4hx\",\n\t\"w5\": \"Icon__w5--3KCuN\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/HOC/Icon/Icon.css?");
+eval("// Exports\nmodule.exports = {\n\t\"wrapper\": \"Icon__wrapper--2ZQ9w\",\n\t\"s50\": \"Icon__s50--MSDUl\",\n\t\"s20\": \"Icon__s20--396wc\",\n\t\"s15\": \"Icon__s15--2pVJ-\",\n\t\"s14\": \"Icon__s14--_YprI\",\n\t\"w16\": \"Icon__w16--3ztsI\",\n\t\"w12\": \"Icon__w12--oQ4hx\",\n\t\"w5\": \"Icon__w5--3KCuN\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/HOC/Icon/Icon.css?");
 
 /***/ }),
 
@@ -525,7 +525,7 @@ eval("// Exports\nmodule.exports = {\n\t\"wrapper\": \"Icon__wrapper--2ZQ9w\",\n
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.Icon = exports.EIcons = void 0;\r\nconst react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nconst Icon_css_1 = __importDefault(__webpack_require__(/*! ./Icon.css */ \"./src/shared/HOC/Icon/Icon.css\"));\r\nconst classnames_1 = __importDefault(__webpack_require__(/*! classnames */ \"classnames\"));\r\nconst Icon_1 = __webpack_require__(/*! ../../Icon */ \"./src/shared/Icon/index.ts\");\r\nvar EIcons;\r\n(function (EIcons) {\r\n    EIcons[\"Comments\"] = \"Comments\";\r\n    EIcons[\"Dots\"] = \"Dots\";\r\n    EIcons[\"Hide\"] = \"Hide\";\r\n    EIcons[\"Report\"] = \"Report\";\r\n    EIcons[\"Save\"] = \"Save\";\r\n    EIcons[\"Share\"] = \"Share\";\r\n})(EIcons = exports.EIcons || (exports.EIcons = {}));\r\nconst IconComponentsList = {\r\n    Comments: Icon_1.MenuCommentsIconComponent,\r\n    Dots: Icon_1.MenuDotsIconComponent,\r\n    Hide: Icon_1.MenuHideIconComponent,\r\n    Report: Icon_1.MenuReportIconComponent,\r\n    Save: Icon_1.MenuSaveIconComponent,\r\n    Share: Icon_1.MenuShareIconComponent,\r\n};\r\nfunction Icon(props) {\r\n    const { name, size, width, color } = props;\r\n    const classes = classnames_1.default(Icon_css_1.default.wrapper, { [Icon_css_1.default[`s${size}`]]: size }, { [Icon_css_1.default[`w${width}`]]: width });\r\n    const IconComponent = IconComponentsList[name];\r\n    return (react_1.default.createElement(\"span\", { className: classes, style: { color } },\r\n        react_1.default.createElement(IconComponent, null)));\r\n}\r\nexports.Icon = Icon;\r\n\n\n//# sourceURL=webpack:///./src/shared/HOC/Icon/Icon.tsx?");
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.Icon = exports.EIcons = void 0;\r\nconst react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nconst Icon_css_1 = __importDefault(__webpack_require__(/*! ./Icon.css */ \"./src/shared/HOC/Icon/Icon.css\"));\r\nconst classnames_1 = __importDefault(__webpack_require__(/*! classnames */ \"classnames\"));\r\nconst Icon_1 = __webpack_require__(/*! ../../Icon */ \"./src/shared/Icon/index.ts\");\r\nvar EIcons;\r\n(function (EIcons) {\r\n    EIcons[\"Comments\"] = \"Comments\";\r\n    EIcons[\"Dots\"] = \"Dots\";\r\n    EIcons[\"Hide\"] = \"Hide\";\r\n    EIcons[\"Report\"] = \"Report\";\r\n    EIcons[\"Save\"] = \"Save\";\r\n    EIcons[\"Share\"] = \"Share\";\r\n    EIcons[\"Anon\"] = \"Anon\";\r\n})(EIcons = exports.EIcons || (exports.EIcons = {}));\r\nconst IconComponentsList = {\r\n    Comments: Icon_1.MenuCommentsIconComponent,\r\n    Dots: Icon_1.MenuDotsIconComponent,\r\n    Hide: Icon_1.MenuHideIconComponent,\r\n    Report: Icon_1.MenuReportIconComponent,\r\n    Save: Icon_1.MenuSaveIconComponent,\r\n    Share: Icon_1.MenuShareIconComponent,\r\n    Anon: Icon_1.IconAnonComponent,\r\n};\r\nfunction Icon(props) {\r\n    const { name, size, width, color } = props;\r\n    const classes = classnames_1.default(Icon_css_1.default.wrapper, { [Icon_css_1.default[`s${size}`]]: size }, { [Icon_css_1.default[`w${width}`]]: width });\r\n    const IconComponent = IconComponentsList[name];\r\n    return (react_1.default.createElement(\"span\", { className: classes, style: { color } },\r\n        react_1.default.createElement(IconComponent, null)));\r\n}\r\nexports.Icon = Icon;\r\n\n\n//# sourceURL=webpack:///./src/shared/HOC/Icon/Icon.tsx?");
 
 /***/ }),
 
@@ -618,7 +618,42 @@ eval("// Exports\nmodule.exports = {\n\t\"searchBlock\": \"SearchBlock__searchBl
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.SearchBlock = void 0;\r\nconst react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nconst SearchBlock_css_1 = __importDefault(__webpack_require__(/*! ./SearchBlock.css */ \"./src/shared/Header/SearchBlock/SearchBlock.css\"));\r\nfunction SearchBlock() {\r\n    return react_1.default.createElement(\"div\", { className: SearchBlock_css_1.default.searchBlock }, \"searech block\");\r\n}\r\nexports.SearchBlock = SearchBlock;\r\n\n\n//# sourceURL=webpack:///./src/shared/Header/SearchBlock/SearchBlock.tsx?");
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.SearchBlock = void 0;\r\nconst react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nconst SearchBlock_css_1 = __importDefault(__webpack_require__(/*! ./SearchBlock.css */ \"./src/shared/Header/SearchBlock/SearchBlock.css\"));\r\nconst UserBlock_tsx_1 = __webpack_require__(/*! ./UserBlock.tsx */ \"./src/shared/Header/SearchBlock/UserBlock.tsx/index.ts\");\r\nfunction SearchBlock() {\r\n    return (react_1.default.createElement(\"div\", { className: SearchBlock_css_1.default.searchBlock },\r\n        react_1.default.createElement(UserBlock_tsx_1.UserBlock, null)));\r\n}\r\nexports.SearchBlock = SearchBlock;\r\n\n\n//# sourceURL=webpack:///./src/shared/Header/SearchBlock/SearchBlock.tsx?");
+
+/***/ }),
+
+/***/ "./src/shared/Header/SearchBlock/UserBlock.tsx/UserBlock.css":
+/*!*******************************************************************!*\
+  !*** ./src/shared/Header/SearchBlock/UserBlock.tsx/UserBlock.css ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("// Exports\nmodule.exports = {\n\t\"userbox\": \"UserBlock__userbox--H6tIq\",\n\t\"avatarBox\": \"UserBlock__avatarBox---9y4D\",\n\t\"avatarbox\": \"UserBlock__avatarbox--10lMZ\",\n\t\"avatarImage\": \"UserBlock__avatarImage--2uBt9\",\n\t\"username\": \"UserBlock__username--1gv9B\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/Header/SearchBlock/UserBlock.tsx/UserBlock.css?");
+
+/***/ }),
+
+/***/ "./src/shared/Header/SearchBlock/UserBlock.tsx/UserBlock.tsx":
+/*!*******************************************************************!*\
+  !*** ./src/shared/Header/SearchBlock/UserBlock.tsx/UserBlock.tsx ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.UserBlock = void 0;\r\nconst react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nconst UserBlock_css_1 = __importDefault(__webpack_require__(/*! ./UserBlock.css */ \"./src/shared/Header/SearchBlock/UserBlock.tsx/UserBlock.css\"));\r\nconst Icon_1 = __webpack_require__(/*! ../../../HOC/Icon */ \"./src/shared/HOC/Icon/index.ts\");\r\nconst Break_1 = __webpack_require__(/*! ../../../HOC/Break */ \"./src/shared/HOC/Break/index.ts\");\r\nconst Text_1 = __webpack_require__(/*! ../../../HOC/Text */ \"./src/shared/HOC/Text/index.ts\");\r\nconst Ecolors_1 = __webpack_require__(/*! ../../../../types/Ecolors */ \"./src/types/Ecolors.tsx\");\r\nfunction UserBlock({ avatarSrc, username }) {\r\n    return (react_1.default.createElement(\"a\", { href: \"https://www.reddit.com/api/v1/authorize?client_id=CLIENT_ID&response_type=code&state=random_string&redirect_uri=http://localhost:3000/auth&duration=permanent&scope=read%20submit%20identity\", className: UserBlock_css_1.default.userbox },\r\n        react_1.default.createElement(\"div\", { className: UserBlock_css_1.default.avatarbox }, avatarSrc ? (react_1.default.createElement(\"img\", { className: UserBlock_css_1.default.avatarImage })) : (react_1.default.createElement(Icon_1.Icon, { name: Icon_1.EIcons.Anon, size: 50 }))),\r\n        react_1.default.createElement(\"div\", { className: UserBlock_css_1.default.username },\r\n            react_1.default.createElement(Break_1.Break, { size: 12 }),\r\n            react_1.default.createElement(Text_1.Text, { size: 20, color: username ? Ecolors_1.Ecolors.black : Ecolors_1.Ecolors.gray99 }, username || \"Аноним\"))));\r\n}\r\nexports.UserBlock = UserBlock;\r\n\n\n//# sourceURL=webpack:///./src/shared/Header/SearchBlock/UserBlock.tsx/UserBlock.tsx?");
+
+/***/ }),
+
+/***/ "./src/shared/Header/SearchBlock/UserBlock.tsx/index.ts":
+/*!**************************************************************!*\
+  !*** ./src/shared/Header/SearchBlock/UserBlock.tsx/index.ts ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __exportStar = (this && this.__exportStar) || function(m, exports) {\r\n    for (var p in m) if (p !== \"default\" && !exports.hasOwnProperty(p)) __createBinding(exports, m, p);\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n__exportStar(__webpack_require__(/*! ./UserBlock */ \"./src/shared/Header/SearchBlock/UserBlock.tsx/UserBlock.tsx\"), exports);\r\n\n\n//# sourceURL=webpack:///./src/shared/Header/SearchBlock/UserBlock.tsx/index.ts?");
 
 /***/ }),
 
@@ -704,6 +739,18 @@ eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nva
 
 /***/ }),
 
+/***/ "./src/shared/Icon/IconAnonComponent.tsx":
+/*!***********************************************!*\
+  !*** ./src/shared/Icon/IconAnonComponent.tsx ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.IconAnonComponent = void 0;\r\nconst react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nfunction IconAnonComponent() {\r\n    return (react_1.default.createElement(\"svg\", { width: \"50\", height: \"50\", viewBox: \"0 0 50 50\", fill: \"none\", xmlns: \"http://www.w3.org/2000/svg\" },\r\n        react_1.default.createElement(\"path\", { d: \"M25 0C11.2 0 0 11.2 0 25C0 38.8 11.2 50 25 50C38.8 50 50 38.8 50 25C50 11.2 38.8 0 25 0ZM25 7.5C29.15 7.5 32.5 10.85 32.5 15C32.5 19.15 29.15 22.5 25 22.5C20.85 22.5 17.5 19.15 17.5 15C17.5 10.85 20.85 7.5 25 7.5ZM25 43C18.75 43 13.225 39.8 10 34.95C10.075 29.975 20 27.25 25 27.25C29.975 27.25 39.925 29.975 40 34.95C36.775 39.8 31.25 43 25 43Z\", fill: \"#D9D9D9\" })));\r\n}\r\nexports.IconAnonComponent = IconAnonComponent;\r\n\n\n//# sourceURL=webpack:///./src/shared/Icon/IconAnonComponent.tsx?");
+
+/***/ }),
+
 /***/ "./src/shared/Icon/MenuCommentsIconComponent.tsx":
 /*!*******************************************************!*\
   !*** ./src/shared/Icon/MenuCommentsIconComponent.tsx ***!
@@ -784,7 +831,7 @@ eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod)
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __exportStar = (this && this.__exportStar) || function(m, exports) {\r\n    for (var p in m) if (p !== \"default\" && !exports.hasOwnProperty(p)) __createBinding(exports, m, p);\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n__exportStar(__webpack_require__(/*! ./MenuDotsIconComponent */ \"./src/shared/Icon/MenuDotsIconComponent.tsx\"), exports);\r\n__exportStar(__webpack_require__(/*! ./MenuCommentsIconComponent */ \"./src/shared/Icon/MenuCommentsIconComponent.tsx\"), exports);\r\n__exportStar(__webpack_require__(/*! ./MenuHideIconComponent */ \"./src/shared/Icon/MenuHideIconComponent.tsx\"), exports);\r\n__exportStar(__webpack_require__(/*! ./MenuReportIconComponent */ \"./src/shared/Icon/MenuReportIconComponent.tsx\"), exports);\r\n__exportStar(__webpack_require__(/*! ./MenuSaveIconComponent */ \"./src/shared/Icon/MenuSaveIconComponent.tsx\"), exports);\r\n__exportStar(__webpack_require__(/*! ./MenuShareIconComponent */ \"./src/shared/Icon/MenuShareIconComponent.tsx\"), exports);\r\n\n\n//# sourceURL=webpack:///./src/shared/Icon/index.ts?");
+eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __exportStar = (this && this.__exportStar) || function(m, exports) {\r\n    for (var p in m) if (p !== \"default\" && !exports.hasOwnProperty(p)) __createBinding(exports, m, p);\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n__exportStar(__webpack_require__(/*! ./MenuDotsIconComponent */ \"./src/shared/Icon/MenuDotsIconComponent.tsx\"), exports);\r\n__exportStar(__webpack_require__(/*! ./MenuCommentsIconComponent */ \"./src/shared/Icon/MenuCommentsIconComponent.tsx\"), exports);\r\n__exportStar(__webpack_require__(/*! ./MenuHideIconComponent */ \"./src/shared/Icon/MenuHideIconComponent.tsx\"), exports);\r\n__exportStar(__webpack_require__(/*! ./MenuReportIconComponent */ \"./src/shared/Icon/MenuReportIconComponent.tsx\"), exports);\r\n__exportStar(__webpack_require__(/*! ./MenuSaveIconComponent */ \"./src/shared/Icon/MenuSaveIconComponent.tsx\"), exports);\r\n__exportStar(__webpack_require__(/*! ./MenuShareIconComponent */ \"./src/shared/Icon/MenuShareIconComponent.tsx\"), exports);\r\n__exportStar(__webpack_require__(/*! ./IconAnonComponent */ \"./src/shared/Icon/IconAnonComponent.tsx\"), exports);\r\n\n\n//# sourceURL=webpack:///./src/shared/Icon/index.ts?");
 
 /***/ }),
 

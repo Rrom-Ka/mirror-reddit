@@ -54,5 +54,9 @@
     "webpack-dev-server": "^3.11.3",
     "webpack-hot-middleware": "^2.26.1",
     "webpack-node-externals": "^1.7.2"
+  },
+  "overrides": {
+    "@types/babel__traverse": "7.18.2"
   }
+  
 }
