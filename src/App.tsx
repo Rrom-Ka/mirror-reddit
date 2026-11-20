@@ -5,12 +5,13 @@ import { Header } from "./shared/Header";
 import { Layout } from "./shared/Layout/Layout";
 import { Content } from "./shared/Content";
 import { CardLists } from "./shared/CardLists";
-import { Dropdown } from "./shared/Dropdown";
+import { useToken } from "./utils/hooks/useToken";
 
 function AppCoponent() {
+  const [token] = useToken();
   return (
     <Layout>
-      <Header />
+      <Header token={token} />
       <Content>
         <CardLists />
       </Content>

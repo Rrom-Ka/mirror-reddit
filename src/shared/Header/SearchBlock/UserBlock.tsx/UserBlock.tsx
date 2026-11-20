@@ -13,7 +13,9 @@ interface IUserBlockProps {
 export function UserBlock({ avatarSrc, username }: IUserBlockProps) {
   return (
     <a
-      href="https://www.reddit.com/api/v1/authorize?client_id=CLIENT_ID&response_type=code&state=random_string&redirect_uri=http://localhost:3000/auth&duration=permanent&scope=read%20submit%20identity"
+      href={`https://github.com/login/oauth/authorize?client_id=${process.env.CLIENT_ID}&redirect_uri=http://localhost:3000/auth&state=random_string&scope=read:user`}
+      // href="https://github.com/login/oauth/authorize?client_id=Ov23likDFj84ty9RiYFJ&redirect_uri=http://localhost:3000/auth&state=random_string&scope=read:user"
+      // href="https://www.reddit.com/api/v1/authorize?client_id=CLIENT_ID&response_type=code&state=random_string&redirect_uri=http://localhost:3000/auth&duration=permanent&scope=read%20submit%20identity"
       className={styles.userbox}
     >
       <div className={styles.avatarbox}>

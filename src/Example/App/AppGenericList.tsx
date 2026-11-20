@@ -31,7 +31,7 @@ function AppCoponent() {
   };
   return (
     <Layout>
-      <Header />
+      <Header token={"token"} />
       <Content>
         <CardLists />
 
