@@ -11,7 +11,7 @@ interface IHeaderProps {
 export function Header({ token }: IHeaderProps) {
   return (
     <header className={style.header}>
-      <SearchBlock token={token} />
+      <SearchBlock />
       <ThreadTitle />
       <SortBlock />
     </header>

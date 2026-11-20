@@ -1,5 +1,6 @@
 import Axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { tokenContext } from "../../context/tokencontext";
 //хук для получения данных порльзователя используя токен
 
 interface IUUserData {
@@ -7,8 +8,9 @@ interface IUUserData {
   iconImg?: string;
 }
 
-export function useUserData(token:string){
+export function useUserData(){
     const [data, setData] = useState<IUUserData>({});
+    const token =useContext(tokenContext)
   useEffect(() => {
     Axios
       .get("https://api.github.com/user", {
