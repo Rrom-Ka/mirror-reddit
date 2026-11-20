@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "8862b78a0c7c82467fbe";
+/******/ 	var hotCurrentHash = "46d08b21d8366f41cd8e";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -2377,7 +2377,7 @@ eval("var api = __webpack_require__(/*! ../../../../node_modules/style-loader/di
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {\r\n    Object.defineProperty(o, \"default\", { enumerable: true, value: v });\r\n}) : function(o, v) {\r\n    o[\"default\"] = v;\r\n});\r\nvar __importStar = (this && this.__importStar) || function (mod) {\r\n    if (mod && mod.__esModule) return mod;\r\n    var result = {};\r\n    if (mod != null) for (var k in mod) if (k !== \"default\" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);\r\n    __setModuleDefault(result, mod);\r\n    return result;\r\n};\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.SearchBlock = void 0;\r\nconst react_1 = __importStar(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\r\nconst SearchBlock_css_1 = __importDefault(__webpack_require__(/*! ./SearchBlock.css */ \"./src/shared/Header/SearchBlock/SearchBlock.css\"));\r\nconst UserBlock_tsx_1 = __webpack_require__(/*! ./UserBlock.tsx */ \"./src/shared/Header/SearchBlock/UserBlock.tsx/index.ts\");\r\nconst axios_1 = __importDefault(__webpack_require__(/*! axios */ \"./node_modules/axios/index.js\"));\r\nfunction SearchBlock({ token }) {\r\n    const [data, setData] = react_1.useState({});\r\n    react_1.useEffect(() => {\r\n        axios_1.default\r\n            .get(\"https://api.github.com/user\", {\r\n            headers: { Authorization: `Bearer ${token}` },\r\n        })\r\n            .then((resp) => {\r\n            const userData = resp.data;\r\n            console.log(\"userData\", userData);\r\n            setData({\r\n                name: userData.name || userData.login,\r\n                iconImg: userData.avatar_url,\r\n            });\r\n        })\r\n            .catch(console.log);\r\n    }, [token]);\r\n    return (react_1.default.createElement(\"div\", { className: SearchBlock_css_1.default.searchBlock },\r\n        react_1.default.createElement(UserBlock_tsx_1.UserBlock, { avatarSrc: data.iconImg, username: data.name })));\r\n}\r\nexports.SearchBlock = SearchBlock;\r\n\n\n//# sourceURL=webpack:///./src/shared/Header/SearchBlock/SearchBlock.tsx?");
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.SearchBlock = void 0;\r\nconst react_1 = __importDefault(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\r\nconst SearchBlock_css_1 = __importDefault(__webpack_require__(/*! ./SearchBlock.css */ \"./src/shared/Header/SearchBlock/SearchBlock.css\"));\r\nconst UserBlock_tsx_1 = __webpack_require__(/*! ./UserBlock.tsx */ \"./src/shared/Header/SearchBlock/UserBlock.tsx/index.ts\");\r\nconst useUserData_1 = __webpack_require__(/*! ../../../utils/hooks/useUserData */ \"./src/utils/hooks/useUserData.ts\");\r\nfunction SearchBlock({ token }) {\r\n    const [data] = useUserData_1.useUserData(token);\r\n    return (react_1.default.createElement(\"div\", { className: SearchBlock_css_1.default.searchBlock },\r\n        react_1.default.createElement(UserBlock_tsx_1.UserBlock, { avatarSrc: data.iconImg, username: data.name })));\r\n}\r\nexports.SearchBlock = SearchBlock;\r\n\n\n//# sourceURL=webpack:///./src/shared/Header/SearchBlock/SearchBlock.tsx?");
 
 /***/ }),
 
@@ -2662,6 +2662,18 @@ eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nex
 
 "use strict";
 eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.useToken = void 0;\r\nconst react_1 = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nfunction useToken() {\r\n    const [token, setToken] = react_1.useState(\"\");\r\n    react_1.useEffect(() => {\r\n        if (window.__token__) {\r\n            setToken(window.__token__);\r\n        }\r\n    }, []);\r\n    return [token];\r\n}\r\nexports.useToken = useToken;\r\n\n\n//# sourceURL=webpack:///./src/utils/hooks/useToken.ts?");
+
+/***/ }),
+
+/***/ "./src/utils/hooks/useUserData.ts":
+/*!****************************************!*\
+  !*** ./src/utils/hooks/useUserData.ts ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.useUserData = void 0;\r\nconst axios_1 = __importDefault(__webpack_require__(/*! axios */ \"./node_modules/axios/index.js\"));\r\nconst react_1 = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nfunction useUserData(token) {\r\n    const [data, setData] = react_1.useState({});\r\n    react_1.useEffect(() => {\r\n        axios_1.default\r\n            .get(\"https://api.github.com/user\", {\r\n            headers: { Authorization: `Bearer ${token}` },\r\n        })\r\n            .then((resp) => {\r\n            const userData = resp.data;\r\n            console.log(\"userData\", userData);\r\n            setData({\r\n                name: userData.name || userData.login,\r\n                iconImg: userData.avatar_url,\r\n            });\r\n        })\r\n            .catch(console.log);\r\n    }, [token]);\r\n    return [data];\r\n}\r\nexports.useUserData = useUserData;\r\n\n\n//# sourceURL=webpack:///./src/utils/hooks/useUserData.ts?");
 
 /***/ }),
 
