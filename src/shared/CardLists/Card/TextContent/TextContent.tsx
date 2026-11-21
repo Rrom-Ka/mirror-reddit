@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./TextContent.css";
+import { usePostsData } from "../../../../utils/hooks/usePostsData";
 
 export function TextContent() {
+  const [post] = usePostsData();
+  useEffect(() => {}, []);
+  console.log("post[] :", post);
   return (
     <div className={styles.textConent}>
       <div className={styles.metaData}>

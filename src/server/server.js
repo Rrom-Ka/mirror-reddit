@@ -10,6 +10,59 @@ const app = express();
 
 app.use("/static", express.static("./dist/client"));
 
+//Сетевая политика запррещает обращаться к redit Добавьте прокси-маршрут в ваш сервер для reddit
+// app.get("/api/posts", (req, res) => {
+//   axios
+//     .get("https://old.reddit.com/r/popular/best.json?sr_detail=true", {
+//       headers: {
+//         // Обязательный заголовок, чтобы Reddit не заблокировал запрос как бота
+//         "User-Agent": "web:new-reddit-study-app:v1.0.0 (by /u/student)",
+//       },
+//     })
+//     .then(({ data }) => {
+//       res.json(data);
+//     })
+//     .catch(console.log);
+// });
+
+app.get("/api/posts", async (req, res) => {
+  try {
+    // Загружаем реальные свежие статьи с Dev.to (работает без ключей и блокировок)
+    const { data } = await axios.get(
+      "https://dev.to/api/articles?per_page=15?",
+    );
+
+    // Превращаем массив статей в точную структуру Reddit API, которую ждет ваш фронтенд
+    const formattedForReddit = {
+      data: {
+        children: data.map((article) => ({
+          data: {
+            id: String(article.id),
+            title: article.title,
+            author: article.user.username,
+            subreddit: article.tag_list[0] || "webdev",
+            score: article.positive_reactions_count,
+            num_comments: article.comments_count,
+            created_utc: Math.floor(
+              new Date(article.published_at).getTime() / 1000,
+            ),
+            thumbnail: article.cover_image || "self",
+            url: article.url,
+            selftext: article.description,
+            sr_detail: {
+              icon_img: article.user.profile_image_90,
+            },
+          },
+        })),
+      },
+    };
+
+    res.json(formattedForReddit);
+  } catch (err) {
+    res.status(500).json({ error: "Ошибка загрузки статей" });
+  }
+});
+
 //устаналиваием листененр на сервер get
 app.get("/", (req, res) => {
   // res.send(indexTemlate(ReactDOM.renderToString(App())));
