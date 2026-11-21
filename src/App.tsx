@@ -7,19 +7,21 @@ import { Content } from "./shared/Content";
 import { CardLists } from "./shared/CardLists";
 import { useToken } from "./utils/hooks/useToken";
 import { tokenContext } from "./context/tokencontext";
+import { userContext, UserContextProvider } from "./context/userContext";
 
 function AppCoponent() {
   const [token] = useToken();
-  const { Provider } = tokenContext;
   return (
-    <Provider value={token}>
-      <Layout>
-        <Header token={token} />
-        <Content>
-          <CardLists />
-        </Content>
-      </Layout>
-    </Provider>
+    <tokenContext.Provider value={token}>
+      <UserContextProvider>
+        <Layout>
+          <Header token={token} />
+          <Content>
+            <CardLists />
+          </Content>
+        </Layout>
+      </UserContextProvider>
+    </tokenContext.Provider>
   );
 }
 
