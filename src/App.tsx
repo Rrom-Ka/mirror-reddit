@@ -8,18 +8,20 @@ import { CardLists } from "./shared/CardLists";
 import { useToken } from "./utils/hooks/useToken";
 import { tokenContext } from "./context/tokencontext";
 import { userContext, UserContextProvider } from "./context/userContext";
-
+import { PostContextProvider } from "./context/postContext";
 function AppCoponent() {
   const [token] = useToken();
   return (
     <tokenContext.Provider value={token}>
       <UserContextProvider>
-        <Layout>
-          <Header token={token} />
-          <Content>
-            <CardLists />
-          </Content>
-        </Layout>
+        <PostContextProvider>
+          <Layout>
+            <Header token={token} />
+            <Content>
+              <CardLists />
+            </Content>
+          </Layout>
+        </PostContextProvider>
       </UserContextProvider>
     </tokenContext.Provider>
   );

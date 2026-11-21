@@ -5,13 +5,15 @@ import { Preview } from "./Preview";
 import { Menu } from "./Menu";
 import { Controls } from "./Controls";
 import { Dropdown } from "../../Dropdown";
-export function Card() {
+import { IPostContextData } from "../../../context/postContext";
+
+export function Card(postData: IPostContextData) {
   const [isOpen, setIsOpen] = useState(false);
   const hadnleClick = () => {};
   return (
     <li className={styles.card}>
-      <TextContent />
-      <Preview />
+      <TextContent {...postData} />
+      <Preview {...postData} />
       <Menu />
       <Controls />
     </li>
