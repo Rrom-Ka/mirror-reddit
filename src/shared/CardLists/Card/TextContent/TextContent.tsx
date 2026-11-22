@@ -33,7 +33,11 @@ export function TextContent({
         </span>
       </div>
       <h2 className={styles.title}>
-        <a href={url} className={styles.postLink}>
+        <a
+          href={url}
+          className={styles.postLink}
+          onClick={() => console.log("clik title textcontnt")}
+        >
           {title}
         </a>
       </h2>
