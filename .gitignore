@@ -1,2 +1,14 @@
+# Зависимости и кеш
 node_modules
 .idea
+
+# Папки сборки Webpack 
+dist/
+
+# Временные файлы Hot Module Replacement (HMR)
+*.hot-update.json
+*.hot-update.js
+*.hot-update.js.map
+
+# Логи и системные файлы
+npm-debug.log*
