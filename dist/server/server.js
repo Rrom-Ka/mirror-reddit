@@ -356,6 +356,41 @@ eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create
 
 /***/ }),
 
+/***/ "./src/shared/CardLists/Card/TextContent/Post/Post.css":
+/*!*************************************************************!*\
+  !*** ./src/shared/CardLists/Card/TextContent/Post/Post.css ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("// Exports\nmodule.exports = {\n\t\"modal\": \"Post__modal--23Cb4\",\n\t\"title\": \"Post__title--3sySr\",\n\t\"descr\": \"Post__descr--1PsZa\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/CardLists/Card/TextContent/Post/Post.css?");
+
+/***/ }),
+
+/***/ "./src/shared/CardLists/Card/TextContent/Post/Post.tsx":
+/*!*************************************************************!*\
+  !*** ./src/shared/CardLists/Card/TextContent/Post/Post.tsx ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {\r\n    Object.defineProperty(o, \"default\", { enumerable: true, value: v });\r\n}) : function(o, v) {\r\n    o[\"default\"] = v;\r\n});\r\nvar __importStar = (this && this.__importStar) || function (mod) {\r\n    if (mod && mod.__esModule) return mod;\r\n    var result = {};\r\n    if (mod != null) for (var k in mod) if (k !== \"default\" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);\r\n    __setModuleDefault(result, mod);\r\n    return result;\r\n};\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.Post = void 0;\r\nconst react_1 = __importStar(__webpack_require__(/*! react */ \"react\"));\r\nconst Post_css_1 = __importDefault(__webpack_require__(/*! ./Post.css */ \"./src/shared/CardLists/Card/TextContent/Post/Post.css\"));\r\nconst react_dom_1 = __importDefault(__webpack_require__(/*! react-dom */ \"react-dom\"));\r\nconst axios_1 = __importDefault(__webpack_require__(/*! axios */ \"axios\"));\r\nfunction Post({ url, onClose }) {\r\n    const ref = react_1.useRef(null);\r\n    const [article, setArticle] = react_1.useState(null);\r\n    const [isLoading, setIsLoading] = react_1.useState(false);\r\n    // Закрытие при клике вне модалки\r\n    react_1.useEffect(() => {\r\n        function handleClick(event) {\r\n            var _a;\r\n            if (event.target instanceof Node &&\r\n                !((_a = ref.current) === null || _a === void 0 ? void 0 : _a.contains(event.target))) {\r\n                onClose === null || onClose === void 0 ? void 0 : onClose();\r\n            }\r\n        }\r\n        document.addEventListener(\"click\", handleClick);\r\n        return () => {\r\n            document.removeEventListener(\"click\", handleClick);\r\n        };\r\n    }, [onClose]);\r\n    // Загрузка контента статьи с dev.to по переданному url\r\n    react_1.useEffect(() => {\r\n        if (!url)\r\n            return;\r\n        setIsLoading(true);\r\n        try {\r\n            // Извлекаем путь из ссылки: \"/codenewbie/tell-us-your-story-...\"\r\n            const pathname = new URL(url).pathname;\r\n            axios_1.default\r\n                .get(`https://dev.to/api/articles${pathname}`)\r\n                .then((res) => {\r\n                setArticle({\r\n                    title: res.data.title,\r\n                    body_html: res.data.body_html,\r\n                });\r\n            })\r\n                .catch((err) => {\r\n                console.error(\"Ошибка загрузки статьи:\", err);\r\n            })\r\n                .finally(() => {\r\n                setIsLoading(false);\r\n            });\r\n        }\r\n        catch (e) {\r\n            console.error(\"Некорректный URL:\", url);\r\n            setIsLoading(false);\r\n        }\r\n    }, [url]);\r\n    const node = document.getElementById(\"modal_root\");\r\n    if (!node)\r\n        return null;\r\n    return react_dom_1.default.createPortal(react_1.default.createElement(\"div\", { className: Post_css_1.default.modal, ref: ref },\r\n        react_1.default.createElement(\"h2\", { className: Post_css_1.default.title }, article ? article.title : \"Загрузка статьи...\"),\r\n        react_1.default.createElement(\"div\", { className: Post_css_1.default.content },\r\n            isLoading && react_1.default.createElement(\"p\", { className: Post_css_1.default.descr }, \"\\u0417\\u0430\\u0433\\u0440\\u0443\\u0436\\u0430\\u0435\\u043C \\u0441\\u043E\\u0434\\u0435\\u0440\\u0436\\u0438\\u043C\\u043E\\u0435...\"),\r\n            article && (react_1.default.createElement(\"div\", { className: Post_css_1.default.descr, dangerouslySetInnerHTML: { __html: article.body_html } })))), node);\r\n}\r\nexports.Post = Post;\r\n\n\n//# sourceURL=webpack:///./src/shared/CardLists/Card/TextContent/Post/Post.tsx?");
+
+/***/ }),
+
+/***/ "./src/shared/CardLists/Card/TextContent/Post/index.ts":
+/*!*************************************************************!*\
+  !*** ./src/shared/CardLists/Card/TextContent/Post/index.ts ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __exportStar = (this && this.__exportStar) || function(m, exports) {\r\n    for (var p in m) if (p !== \"default\" && !exports.hasOwnProperty(p)) __createBinding(exports, m, p);\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n__exportStar(__webpack_require__(/*! ./Post */ \"./src/shared/CardLists/Card/TextContent/Post/Post.tsx\"), exports);\r\n\n\n//# sourceURL=webpack:///./src/shared/CardLists/Card/TextContent/Post/index.ts?");
+
+/***/ }),
+
 /***/ "./src/shared/CardLists/Card/TextContent/TextContent.css":
 /*!***************************************************************!*\
   !*** ./src/shared/CardLists/Card/TextContent/TextContent.css ***!
@@ -379,41 +414,6 @@ eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod)
 
 /***/ }),
 
-/***/ "./src/shared/CardLists/Card/TextContent/Title/Post/Post.css":
-/*!*******************************************************************!*\
-  !*** ./src/shared/CardLists/Card/TextContent/Title/Post/Post.css ***!
-  \*******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("// Exports\nmodule.exports = {\n\t\"modal\": \"Post__modal--1bCo8\",\n\t\"title\": \"Post__title--iB0NA\",\n\t\"descr\": \"Post__descr--3WKWW\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/CardLists/Card/TextContent/Title/Post/Post.css?");
-
-/***/ }),
-
-/***/ "./src/shared/CardLists/Card/TextContent/Title/Post/Post.tsx":
-/*!*******************************************************************!*\
-  !*** ./src/shared/CardLists/Card/TextContent/Title/Post/Post.tsx ***!
-  \*******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.Post = void 0;\r\nconst react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nconst Post_css_1 = __importDefault(__webpack_require__(/*! ./Post.css */ \"./src/shared/CardLists/Card/TextContent/Title/Post/Post.css\"));\r\nconst react_dom_1 = __importDefault(__webpack_require__(/*! react-dom */ \"react-dom\"));\r\nfunction Post({ url }) {\r\n    //typeGard\r\n    const node = document.getElementById(\"modal_root\");\r\n    if (!node)\r\n        return null;\r\n    console.log(node);\r\n    //созадем портал createPortal(год, контейнер)\r\n    return react_dom_1.default.createPortal(react_1.default.createElement(\"div\", { className: Post_css_1.default.modal },\r\n        react_1.default.createElement(\"h2\", { className: Post_css_1.default.title }, \"\\u0417\\u0430\\u0433\\u043E\\u043B\\u043E\\u0433\\u0432\\u043E\\u043A\"),\r\n        react_1.default.createElement(\"h3\", null, url),\r\n        react_1.default.createElement(\"div\", { className: Post_css_1.default.content },\r\n            react_1.default.createElement(\"p\", { className: Post_css_1.default.descr }, \"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione accusantium eum quidem? Ratione saepe quasi officia maiores nostrum, doloremque et hic dicta rem! Iure recusandae quidem, corporis est a atque fugit dolor nesciunt molestiae illo id minima saepe minus asperiores nostrum voluptate rem quia natus veniam. Libero ipsum ut tempore mollitia soluta eaque atque minus quidem ipsa! Fuga earum dolore consequuntur cumque optio in ducimus magni nulla sapiente error maiores, doloribus, consequatur nesciunt labore nemo aliquid nam similique deleniti laborum reprehenderit. Omnis, quos. Aliquid totam quo explicabo. Aliquid dolores tenetur sapiente nulla numquam. Laboriosam neque modi libero expedita, quos facere.\"),\r\n            react_1.default.createElement(\"p\", { className: Post_css_1.default.descr }, \"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione accusantium eum quidem? Ratione saepe quasi officia maiores nostrum, doloremque et hic dicta rem! Iure recusandae quidem, corporis est a atque fugit dolor nesciunt molestiae illo id minima saepe minus asperiores nostrum voluptate rem quia natus veniam. Libero ipsum ut tempore mollitia soluta eaque atque minus quidem ipsa! Fuga earum dolore consequuntur cumque optio in ducimus magni nulla sapiente error maiores, doloribus, consequatur nesciunt labore nemo aliquid nam similique deleniti laborum reprehenderit. Omnis, quos. Aliquid totam quo explicabo. Aliquid dolores tenetur sapiente nulla numquam. Laboriosam neque modi libero expedita, quos facere.\"),\r\n            react_1.default.createElement(\"p\", { className: Post_css_1.default.descr }, \"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione accusantium eum quidem? Ratione saepe quasi officia maiores nostrum, doloremque et hic dicta rem! Iure recusandae quidem, corporis est a atque fugit dolor nesciunt molestiae illo id minima saepe minus asperiores nostrum voluptate rem quia natus veniam. Libero ipsum ut tempore mollitia soluta eaque atque minus quidem ipsa! Fuga earum dolore consequuntur cumque optio in ducimus magni nulla sapiente error maiores, doloribus, consequatur nesciunt labore nemo aliquid nam similique deleniti laborum reprehenderit. Omnis, quos. Aliquid totam quo explicabo. Aliquid dolores tenetur sapiente nulla numquam. Laboriosam neque modi libero expedita, quos facere.\"))), node);\r\n}\r\nexports.Post = Post;\r\n\n\n//# sourceURL=webpack:///./src/shared/CardLists/Card/TextContent/Title/Post/Post.tsx?");
-
-/***/ }),
-
-/***/ "./src/shared/CardLists/Card/TextContent/Title/Post/index.ts":
-/*!*******************************************************************!*\
-  !*** ./src/shared/CardLists/Card/TextContent/Title/Post/index.ts ***!
-  \*******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __exportStar = (this && this.__exportStar) || function(m, exports) {\r\n    for (var p in m) if (p !== \"default\" && !exports.hasOwnProperty(p)) __createBinding(exports, m, p);\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n__exportStar(__webpack_require__(/*! ./Post */ \"./src/shared/CardLists/Card/TextContent/Title/Post/Post.tsx\"), exports);\r\n\n\n//# sourceURL=webpack:///./src/shared/CardLists/Card/TextContent/Title/Post/index.ts?");
-
-/***/ }),
-
 /***/ "./src/shared/CardLists/Card/TextContent/Title/Title.css":
 /*!***************************************************************!*\
   !*** ./src/shared/CardLists/Card/TextContent/Title/Title.css ***!
@@ -433,7 +433,7 @@ eval("// Exports\nmodule.exports = {\n\t\"title\": \"Title__title--LoQ-a\",\n\t\
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {\r\n    Object.defineProperty(o, \"default\", { enumerable: true, value: v });\r\n}) : function(o, v) {\r\n    o[\"default\"] = v;\r\n});\r\nvar __importStar = (this && this.__importStar) || function (mod) {\r\n    if (mod && mod.__esModule) return mod;\r\n    var result = {};\r\n    if (mod != null) for (var k in mod) if (k !== \"default\" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);\r\n    __setModuleDefault(result, mod);\r\n    return result;\r\n};\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.Title = void 0;\r\nconst react_1 = __importStar(__webpack_require__(/*! react */ \"react\"));\r\nconst Title_css_1 = __importDefault(__webpack_require__(/*! ./Title.css */ \"./src/shared/CardLists/Card/TextContent/Title/Title.css\"));\r\nconst Post_1 = __webpack_require__(/*! ./Post */ \"./src/shared/CardLists/Card/TextContent/Title/Post/index.ts\");\r\nfunction Title({ url, title }) {\r\n    const [isModalOpened, setIsModalOpened] = react_1.useState(false);\r\n    return (react_1.default.createElement(react_1.default.Fragment, null,\r\n        react_1.default.createElement(\"h2\", { className: Title_css_1.default.title, onClick: (e) => {\r\n                e.preventDefault();\r\n                e.stopPropagation();\r\n                console.log(\"Title clik\");\r\n                setIsModalOpened(false);\r\n            } },\r\n            react_1.default.createElement(\"a\", { href: \"#posr-url\", className: Title_css_1.default.postLink, onClick: (e) => {\r\n                    e.preventDefault();\r\n                    e.stopPropagation();\r\n                    console.log(\"Title clik\");\r\n                    setIsModalOpened(true);\r\n                } }, title),\r\n            isModalOpened && react_1.default.createElement(Post_1.Post, { url: url }))));\r\n}\r\nexports.Title = Title;\r\n\n\n//# sourceURL=webpack:///./src/shared/CardLists/Card/TextContent/Title/Title.tsx?");
+eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {\r\n    Object.defineProperty(o, \"default\", { enumerable: true, value: v });\r\n}) : function(o, v) {\r\n    o[\"default\"] = v;\r\n});\r\nvar __importStar = (this && this.__importStar) || function (mod) {\r\n    if (mod && mod.__esModule) return mod;\r\n    var result = {};\r\n    if (mod != null) for (var k in mod) if (k !== \"default\" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);\r\n    __setModuleDefault(result, mod);\r\n    return result;\r\n};\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.Title = void 0;\r\nconst react_1 = __importStar(__webpack_require__(/*! react */ \"react\"));\r\nconst Title_css_1 = __importDefault(__webpack_require__(/*! ./Title.css */ \"./src/shared/CardLists/Card/TextContent/Title/Title.css\"));\r\nconst Post_1 = __webpack_require__(/*! ../Post */ \"./src/shared/CardLists/Card/TextContent/Post/index.ts\");\r\nfunction Title({ url, title }) {\r\n    const [isModalOpened, setIsModalOpened] = react_1.useState(false);\r\n    return (react_1.default.createElement(react_1.default.Fragment, null,\r\n        react_1.default.createElement(\"h2\", { className: Title_css_1.default.title },\r\n            react_1.default.createElement(\"a\", { href: \"#posr-url\", className: Title_css_1.default.postLink, onClick: (e) => {\r\n                    e.preventDefault();\r\n                    e.stopPropagation();\r\n                    console.log(\"Title clik\");\r\n                    setIsModalOpened(true);\r\n                } }, title),\r\n            isModalOpened && (react_1.default.createElement(Post_1.Post, { url: url, onClose: () => setIsModalOpened(false) })))));\r\n}\r\nexports.Title = Title;\r\n\n\n//# sourceURL=webpack:///./src/shared/CardLists/Card/TextContent/Title/Title.tsx?");
 
 /***/ }),
 

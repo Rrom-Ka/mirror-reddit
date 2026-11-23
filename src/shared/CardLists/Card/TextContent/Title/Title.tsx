@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./Title.css";
-import { Post } from "./Post";
+import { Post } from "../Post";
 
 interface ITitleProps {
   url?: string;
@@ -13,12 +13,12 @@ export function Title({ url, title }: ITitleProps) {
     <>
       <h2
         className={styles.title}
-        onClick={(e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          console.log("Title clik");
-          setIsModalOpened(false);
-        }}
+        // onClick={(e) => {
+        //   e.preventDefault();
+        //   e.stopPropagation();
+        //   console.log("Title clik");
+        //   setIsModalOpened(false);
+        // }}
       >
         <a
           href="#posr-url"
@@ -32,7 +32,9 @@ export function Title({ url, title }: ITitleProps) {
         >
           {title}
         </a>
-        {isModalOpened && <Post url={url} />}
+        {isModalOpened && (
+          <Post url={url} onClose={() => setIsModalOpened(false)} />
+        )}
       </h2>
     </>
   );

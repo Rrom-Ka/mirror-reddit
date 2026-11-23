@@ -1,21 +1,44 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styles from "./Post.css";
 import ReactDOM from "react-dom";
 
 interface IPostProps {
   url?: string;
+  onClose?: () => void;
 }
 
-export function Post({ url }: IPostProps) {
+export function Post({ url, onClose }: IPostProps) {
+  //получаем ссылку на элемент(модалку)
+  const ref = useRef<HTMLDivElement>(null);
+  //обработчик на документ (вне модалки)
+  useEffect(() => {
+    //ищем где кликает и сравниваем с элементом
+    function hadleClick(event: MouseEvent) {
+      if (
+        event.target instanceof Node &&
+        !ref.current?.contains(event.target)
+      ) {
+        onClose?.();
+        console.log("click witjout modal");
+      }
+      // event.target;
+    }
+    document.addEventListener("click", hadleClick);
+    //очищаем обработчик
+    return () => {
+      document.removeEventListener("click", hadleClick);
+    };
+  }, []);
+
   //typeGard
   const node = document.getElementById("modal_root");
   if (!node) return null;
   console.log(node);
   //созадем портал createPortal(год, контейнер)
   return ReactDOM.createPortal(
-    <div className={styles.modal}>
+    <div className={styles.modal} ref={ref}>
       <h2 className={styles.title}>Загологвок</h2>
-      <h3>{url}</h3>
+      {url && <h3>{url}</h3>}
       <div className={styles.content}>
         <p className={styles.descr}>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione
