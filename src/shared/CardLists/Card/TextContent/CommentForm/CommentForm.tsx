@@ -1,12 +1,13 @@
-import React, { ChangeEvent, FormEvent, useState } from "react";
+import React, { ChangeEvent, FormEvent, useContext, useState } from "react";
 import styles from "./CommentForm.css";
+import { commentConext } from "../../../../../context/commentContext";
 
 export function CommentForm() {
-  //достаем value из textarea
-  const [value, setValue] = useState("");
+  //достаем value из textarea из контекста
+  const { value, onChange } = useContext(commentConext);
 
   function handleChange(event: ChangeEvent<HTMLTextAreaElement>) {
-    setValue(event.target.value);
+    onChange(event.target.value);
   }
   function handleSubmit(event: FormEvent) {
     event.preventDefault();
