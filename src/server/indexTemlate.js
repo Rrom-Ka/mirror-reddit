@@ -12,5 +12,7 @@ export const indexTemlate = (content, token) => `
 </head>
 <body>
     <div id="react_root">${content}</div>
+    <!--// для Portall-->
+    <div id="modal_root"></div>
 </body>
 </html>`;
