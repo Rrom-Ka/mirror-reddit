@@ -1,10 +1,21 @@
 import React from "react";
 import styles from "./Post.css";
+import ReactDOM from "react-dom";
 
-export function Post() {
-  return (
+interface IPostProps {
+  url?: string;
+}
+
+export function Post({ url }: IPostProps) {
+  //typeGard
+  const node = document.getElementById("modal_root");
+  if (!node) return null;
+  console.log(node);
+  //созадем портал createPortal(год, контейнер)
+  return ReactDOM.createPortal(
     <div className={styles.modal}>
       <h2 className={styles.title}>Загологвок</h2>
+      <h3>{url}</h3>
       <div className={styles.content}>
         <p className={styles.descr}>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione
@@ -46,6 +57,7 @@ export function Post() {
           Laboriosam neque modi libero expedita, quos facere.
         </p>
       </div>
-    </div>
+    </div>,
+    node,
   );
 }

@@ -11,7 +11,15 @@ export function Title({ url, title }: ITitleProps) {
   const [isModalOpened, setIsModalOpened] = useState(false);
   return (
     <>
-      <h2 className={styles.title}>
+      <h2
+        className={styles.title}
+        onClick={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          console.log("Title clik");
+          setIsModalOpened(false);
+        }}
+      >
         <a
           href="#posr-url"
           className={styles.postLink}
@@ -24,7 +32,7 @@ export function Title({ url, title }: ITitleProps) {
         >
           {title}
         </a>
-        {isModalOpened && <Post />}
+        {isModalOpened && <Post url={url} />}
       </h2>
     </>
   );
