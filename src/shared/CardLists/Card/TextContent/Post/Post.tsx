@@ -1,87 +1,87 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import styles from "./Post.css";
 import ReactDOM from "react-dom";
-import axios from "axios";
+import { CommentForm } from "../CommentForm";
 
 interface IPostProps {
   url?: string;
   onClose?: () => void;
 }
 
-interface IArticleData {
-  title: string;
-  body_html: string;
-}
-
 export function Post({ url, onClose }: IPostProps) {
+  //получаем ссылку на элемент(модалку)
   const ref = useRef<HTMLDivElement>(null);
-  const [article, setArticle] = useState<IArticleData | null>(null);
-  const [isLoading, setIsLoading] = useState(false);
-
-  // Закрытие при клике вне модалки
+  //обработчик на документ (вне модалки)
   useEffect(() => {
-    function handleClick(event: MouseEvent) {
+    //ищем где кликает и сравниваем с элементом
+    function hadleClick(event: MouseEvent) {
       if (
         event.target instanceof Node &&
         !ref.current?.contains(event.target)
       ) {
         onClose?.();
+        console.log("click witjout modal");
       }
+      // event.target;
     }
-    document.addEventListener("click", handleClick);
+    document.addEventListener("click", hadleClick);
+    //очищаем обработчик
     return () => {
-      document.removeEventListener("click", handleClick);
+      document.removeEventListener("click", hadleClick);
     };
-  }, [onClose]);
+  }, []);
 
-  // Загрузка контента статьи с dev.to по переданному url
-  useEffect(() => {
-    if (!url) return;
-
-    setIsLoading(true);
-    try {
-      // Извлекаем путь из ссылки: "/codenewbie/tell-us-your-story-..."
-      const pathname = new URL(url).pathname;
-
-      axios
-        .get(`https://dev.to/api/articles${pathname}`)
-        .then((res) => {
-          setArticle({
-            title: res.data.title,
-            body_html: res.data.body_html,
-          });
-        })
-        .catch((err) => {
-          console.error("Ошибка загрузки статьи:", err);
-        })
-        .finally(() => {
-          setIsLoading(false);
-        });
-    } catch (e) {
-      console.error("Некорректный URL:", url);
-      setIsLoading(false);
-    }
-  }, [url]);
-
+  //typeGard
   const node = document.getElementById("modal_root");
   if (!node) return null;
-
+  console.log(node);
+  //созадем портал createPortal(год, контейнер)
   return ReactDOM.createPortal(
     <div className={styles.modal} ref={ref}>
-      <h2 className={styles.title}>
-        {article ? article.title : "Загрузка статьи..."}
-      </h2>
-
+      <h2 className={styles.title}>Загологвок</h2>
+      {url && <h3>{url}</h3>}
       <div className={styles.content}>
-        {isLoading && <p className={styles.descr}>Загружаем содержимое...</p>}
-
-        {article && (
-          <div
-            className={styles.descr}
-            dangerouslySetInnerHTML={{ __html: article.body_html }}
-          />
-        )}
+        <p className={styles.descr}>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione
+          accusantium eum quidem? Ratione saepe quasi officia maiores nostrum,
+          doloremque et hic dicta rem! Iure recusandae quidem, corporis est a
+          atque fugit dolor nesciunt molestiae illo id minima saepe minus
+          asperiores nostrum voluptate rem quia natus veniam. Libero ipsum ut
+          tempore mollitia soluta eaque atque minus quidem ipsa! Fuga earum
+          dolore consequuntur cumque optio in ducimus magni nulla sapiente error
+          maiores, doloribus, consequatur nesciunt labore nemo aliquid nam
+          similique deleniti laborum reprehenderit. Omnis, quos. Aliquid totam
+          quo explicabo. Aliquid dolores tenetur sapiente nulla numquam.
+          Laboriosam neque modi libero expedita, quos facere.
+        </p>
+        <p className={styles.descr}>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione
+          accusantium eum quidem? Ratione saepe quasi officia maiores nostrum,
+          doloremque et hic dicta rem! Iure recusandae quidem, corporis est a
+          atque fugit dolor nesciunt molestiae illo id minima saepe minus
+          asperiores nostrum voluptate rem quia natus veniam. Libero ipsum ut
+          tempore mollitia soluta eaque atque minus quidem ipsa! Fuga earum
+          dolore consequuntur cumque optio in ducimus magni nulla sapiente error
+          maiores, doloribus, consequatur nesciunt labore nemo aliquid nam
+          similique deleniti laborum reprehenderit. Omnis, quos. Aliquid totam
+          quo explicabo. Aliquid dolores tenetur sapiente nulla numquam.
+          Laboriosam neque modi libero expedita, quos facere.
+        </p>
+        <p className={styles.descr}>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione
+          accusantium eum quidem? Ratione saepe quasi officia maiores nostrum,
+          doloremque et hic dicta rem! Iure recusandae quidem, corporis est a
+          atque fugit dolor nesciunt molestiae illo id minima saepe minus
+          asperiores nostrum voluptate rem quia natus veniam. Libero ipsum ut
+          tempore mollitia soluta eaque atque minus quidem ipsa! Fuga earum
+          dolore consequuntur cumque optio in ducimus magni nulla sapiente error
+          maiores, doloribus, consequatur nesciunt labore nemo aliquid nam
+          similique deleniti laborum reprehenderit. Omnis, quos. Aliquid totam
+          quo explicabo. Aliquid dolores tenetur sapiente nulla numquam.
+          Laboriosam neque modi libero expedita, quos facere.
+        </p>
       </div>
+      <CommentForm />
     </div>,
     node,
   );
