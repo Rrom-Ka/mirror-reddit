@@ -1,8 +1,17 @@
 import { useEffect, useState } from "react";
 //возвращает mobile, desctop, tablet в зависимости от ширины экрана
+export enum EDeviceType{
+  "desctop"="desctop",
+  "tablet"="tablet",
+  "mobile"="mobile"
+}
+
+// interface IDeviceType{
+//   device:EDeviceType
+// }
 
 export function useDeviceType() {
-    const [isTablaet, setIsTablet] = useState("mobile");
+    const [isTablaet, setIsTablet] = useState<EDeviceType>(EDeviceType.mobile);
       useEffect(() => {
         // //отслеживание брейк-поинта
   // //проверка экрана useDeviceType
@@ -14,9 +23,9 @@ export function useDeviceType() {
         };
         //нчальное значение
         const updateBreakpoint = () => {
-          if (mediaQuery.desctop.matches) setIsTablet("desctop");
-          if (mediaQuery.tablet.matches) setIsTablet("tablet");
-          if (mediaQuery.mobile.matches) setIsTablet("mobile");
+          if (mediaQuery.desctop.matches) setIsTablet(EDeviceType.desctop);
+          if (mediaQuery.tablet.matches) setIsTablet(EDeviceType.tablet);
+          if (mediaQuery.mobile.matches) setIsTablet(EDeviceType.mobile);
         };
         updateBreakpoint();
     
