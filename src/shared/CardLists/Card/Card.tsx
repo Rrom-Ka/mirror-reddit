@@ -12,7 +12,7 @@ export function Card(postData: IPostContextData) {
   const hadnleClick = () => {};
   return (
     <li className={styles.card}>
-      <TextContent {...postData} />
+      <TextContent {...postData} modal={true} />
       <Preview {...postData} />
       <Menu />
       <Controls />

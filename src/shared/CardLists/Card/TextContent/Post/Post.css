@@ -5,6 +5,9 @@
   transform: translateX(
     -50%
   ); /* Ровно центрирует блок по горизонтали на любом экране */
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
   width: 960px;
   max-width: calc(100% - 32px); /* Чтобы на узких экранах не вылезало за края */
   background-color: #ffffff; /* Чтобы контент сайта не просвечивал сквозь модалку */
@@ -13,6 +16,15 @@
   padding: 52px 60px 36px;
   z-index: 33;
   box-sizing: border-box;
+}
+
+.wrapHeader {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.wrapTitle {
 }
 
 .title {
@@ -32,3 +44,26 @@
     sans-serif;
   color: #333;
 }
+
+.wrapImg {
+  min-height: 178px;
+}
+
+.img {
+  min-height: 100%;
+  object-fit: cover;
+}
+
+/* @media all and (min-width: 1024px) {
+  .wrapImg {
+    order: -1;
+    max-width: 190px;
+    max-height: 107px;
+    min-height: 107px;
+    padding-right: 38px;
+  }
+
+  .img {
+    max-height: 100%;
+  }
+} */

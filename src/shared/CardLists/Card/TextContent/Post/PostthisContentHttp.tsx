@@ -3,9 +3,12 @@ import styles from "./Post.css";
 import ReactDOM from "react-dom";
 import axios from "axios";
 import { CommentForm } from "../CommentForm";
+import { Controls } from "../../Controls";
+import { title } from "process";
+import { TextContent } from "../TextContent";
+import { IPostContextData } from "../../../../../context/postContext";
 
-interface IPostProps {
-  url?: string;
+interface IPostProps extends IPostContextData {
   onClose?: () => void;
 }
 
@@ -14,10 +17,12 @@ interface IArticleData {
   body_html: string;
 }
 
-export function Post({ url, onClose }: IPostProps) {
+export function PostthisContentHttp(postData: IPostProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [article, setArticle] = useState<IArticleData | null>(null);
   const [isLoading, setIsLoading] = useState(false);
+
+  console.log("postData--PostthisContentHttp :", postData);
 
   // Закрытие при клике вне модалки
   useEffect(() => {
@@ -26,27 +31,28 @@ export function Post({ url, onClose }: IPostProps) {
         event.target instanceof Node &&
         !ref.current?.contains(event.target)
       ) {
-        onClose?.();
+        postData.onClose?.();
       }
     }
     document.addEventListener("click", handleClick);
     return () => {
       document.removeEventListener("click", handleClick);
     };
-  }, [onClose]);
+  }, [postData.onClose]);
 
   // Загрузка контента статьи с dev.to по переданному url
   useEffect(() => {
-    if (!url) return;
+    if (!postData.url) return;
 
     setIsLoading(true);
     try {
       // Извлекаем путь из ссылки: "/codenewbie/tell-us-your-story-..."
-      const pathname = new URL(url).pathname;
+      const pathname = new URL(postData.url).pathname;
 
       axios
         .get(`https://dev.to/api/articles${pathname}`)
         .then((res) => {
+          // console.log("axios-объект", res);
           setArticle({
             title: res.data.title,
             body_html: res.data.body_html,
@@ -59,19 +65,24 @@ export function Post({ url, onClose }: IPostProps) {
           setIsLoading(false);
         });
     } catch (e) {
-      console.error("Некорректный URL:", url);
+      console.error("Некорректный URL:", postData.url);
       setIsLoading(false);
     }
-  }, [url]);
+  }, [postData.url]);
 
   const node = document.getElementById("modal_root");
   if (!node) return null;
 
   return ReactDOM.createPortal(
     <div className={styles.modal} ref={ref}>
-      <h2 className={styles.title}>
-        {article ? article.title : "Загрузка статьи..."}
-      </h2>
+      <div className={styles.wrapHeader}>
+        <Controls />
+        <TextContent {...postData} modal={false} />
+      </div>
+
+      <div className={styles.wrapImg}>
+        <img src={postData.thumbnail} alt="" className={styles.img} />
+      </div>
 
       <div className={styles.content}>
         {isLoading && <p className={styles.descr}>Загружаем содержимое...</p>}
