@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import styles from "./Post.css";
 import ReactDOM from "react-dom";
 import axios from "axios";
@@ -7,33 +7,22 @@ import { Controls } from "../../Controls";
 import { TextContent } from "../TextContent";
 import { IPostContextData } from "../../../../../context/postContext";
 import { useContentPostModal } from "../../../../../utils/hooks/useContentPostModal";
+import { useModalClose } from "../../../../../utils/hooks/useModalClose";
 
 interface IPostProps extends IPostContextData {
   onClose?: () => void;
 }
 
 export function PostContentNotHttp(postData: IPostProps) {
-  const ref = useRef<HTMLDivElement>(null);
+  //запрос контента статьи и состояния его зугрузки
   const { article, isLoading } = useContentPostModal(postData.id);
 
   console.log("postData--PostthisContentHttp :", postData);
 
   // Закрытие при клике вне модалки
-  useEffect(() => {
-    function handleClick(event: MouseEvent) {
-      if (
-        event.target instanceof Node &&
-        !ref.current?.contains(event.target)
-      ) {
-        postData.onClose?.();
-      }
-    }
-    document.addEventListener("click", handleClick);
-    return () => {
-      document.removeEventListener("click", handleClick);
-    };
-  }, [postData.onClose]);
-
+  const ref = useRef<HTMLDivElement>(null);
+  useModalClose(ref, postData.onClose);
+  //проверка наличия соттвествующего текга для загузки модального окна
   const node = document.getElementById("modal_root");
   if (!node) return null;
 
